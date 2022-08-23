@@ -46,6 +46,7 @@ const AboutTitle = styled.div`
   font-size: 100px;
   padding-left: 1%;
   font-weight: bold;
+  color: #fffcf2;
 `;
 
 const AboutAnimatedName = styled.div`
@@ -53,6 +54,7 @@ const AboutAnimatedName = styled.div`
   padding-right: 1%;
   margin-left: auto;
   font-weight: bold;
+  color: #fffcf2;
 `;
 
 const AboutDescriptionBox = styled.div`
@@ -66,6 +68,7 @@ const AboutDescriptionInfoBox = styled.div`
 `;
 
 const AboutDescriptionInfo = styled.div`
+  color: #ccc5b9;
 `;
 
 const AboutDescriptionImgBox = styled.div`
@@ -75,3 +78,14 @@ const AboutDescriptionImgBox = styled.div`
 
 const AboutDescriptionImg = styled.img`
 `;
+
+// #fffcf2 floral white,
+//    pop out, headers and titles
+// #ccc5b9 pale silver,
+//    normal text
+// #403d39 black olive,
+//    box around text
+// #252422 eerie black,
+//    background
+// #eb5e28 flame
+//    hightlight around buttons
