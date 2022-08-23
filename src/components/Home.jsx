@@ -4,11 +4,11 @@ import styled from 'styled-components';
 const Home = () => {
   return (
     <HomeContainer>
-      <HomeTextBox>
+      {/* <HomeTextBox>
         <HomeText>
           Hi my name is Clayton Chin.
         </HomeText>
-      </HomeTextBox>
+      </HomeTextBox> */}
     </HomeContainer>
   )
 }
@@ -22,6 +22,7 @@ const HomeContainer = styled.section`
   width: 100%;
   justify-content: center;
   align-items: center;
+  background-image: url('https://aniyuki.com/wp-content/uploads/2022/05/aniyuki-anya-spy-x-family-22.gif')
 `;
 
 const HomeTextBox = styled.div`

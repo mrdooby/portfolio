@@ -80,6 +80,7 @@ const ProjectsCarouselBox = styled.div`
 
 const ProjectsCarouselText = styled.div`
   font-size: 25px;
+  padding-left: 1%;
   margin-right: 20px;
   color: #fffcf2;
   :hover {
@@ -96,18 +97,17 @@ const Embla = styled.div`
 const EmblaContainer = styled.div`
   display: flex;
   height: 100%;
-  padding-top: 10%;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-top: 5%;
 `;
 
 const EmblaSlide = styled.div`
   flex: 0 0 100%;
+
 `;
 
 const ProjectsGitHub = styled(GitHubIcon)`
   position: sticky;
-  top: 10%;
+  top: 0;
   :hover {
     cursor: pointer;
     color: #eb5e28;

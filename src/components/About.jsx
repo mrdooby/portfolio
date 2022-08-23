@@ -1,13 +1,18 @@
 import React, { useState, useEffect, Suspense } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import Typed from 'react-typed';
 
 const About = () => {
   return (
     <AboutContainer>
       <AboutBox>
         <AboutTitleBox>
-          <AboutTitle>about me</AboutTitle>
-          <AboutAnimatedName>clayton chin</AboutAnimatedName>
+          <AboutTitle>about me&nbsp;</AboutTitle>
+            <AboutAnimatedName
+              strings={['dog lover', 'bowler', 'gym rat', 'foodie', 'clayton chin']}
+              typeSpeed={50}
+              backSpeed={50}
+            />
         </AboutTitleBox>
         <AboutDescriptionBox>
           <AboutDescriptionInfoBox>
@@ -52,10 +57,9 @@ const AboutTitle = styled.div`
   color: #fffcf2;
 `;
 
-const AboutAnimatedName = styled.div`
+const AboutAnimatedName = styled(Typed)`
   font-size: 100px;
   padding-right: 1%;
-  margin-left: auto;
   font-weight: bold;
   color: #fffcf2;
 `;

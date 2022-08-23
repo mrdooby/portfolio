@@ -20,6 +20,7 @@ export default ProjectsDescription;
 
 const ProjectsDescriptionBox = styled.div`
   display: flex;
+  max-height: 100%;
 `;
 
 
@@ -27,7 +28,7 @@ const ProjectsDescriptionInfoBox = styled.div`
   border-radius: 5px 0 0 5px;
   width: 39%;
   padding: 1%;
-  background-color: #403d39
+  background-color: #403d39;
 `;
 
 const ProjectsDescriptionInfo = styled.p`
@@ -35,15 +36,15 @@ const ProjectsDescriptionInfo = styled.p`
   white-space: pre-wrap;
 `;
 
-const ProjectsDescriptionImgBox = styled.span`
+const ProjectsDescriptionImgBox = styled.div`
   display: flex;
   width: 59%;
+  object-position: contain;
 `;
 
 const ProjectsDescriptionImg = styled.img`
   max-width: 100%;
-  max-height: 100%;
-  width: auto;
+  max-height: 75%;
   border-radius: 0 5px 5px 0;
 `;
 

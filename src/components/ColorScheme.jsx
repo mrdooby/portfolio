@@ -178,4 +178,4 @@ const ColorSchemeCircle5 = styled.div`
 // #252422 eerie black,
 //    background
 // #eb5e28 flame
-//    hightlight around buttons
+//    hightlight around buttons s
