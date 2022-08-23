@@ -4,7 +4,11 @@ import styled from 'styled-components';
 const Home = () => {
   return (
     <HomeContainer>
-      <HomeAnimation src='https://i.pinimg.com/originals/cf/b9/50/cfb950d45958903ee7990c4b7645c486.gif'/>
+      <HomeTextBox>
+        <HomeText>
+          Hi my name is Clayton Chin.
+        </HomeText>
+      </HomeTextBox>
     </HomeContainer>
   )
 }
@@ -13,14 +17,25 @@ export default Home;
 
 // styled components
 const HomeContainer = styled.section`
+  display: flex;
   height: 100vh;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 `;
 
-const HomeAnimation = styled.img`
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+const HomeTextBox = styled.div`
+  position: absolute;
+  border: 3px solid green;
+  padding: 10px;
+  height: 50%;
+  width: 50%;
+`;
+
+const HomeText = styled.div`
+  font-weight: bold;
+  text-align: center;
+  font-size: 75px;
 `;
 
 

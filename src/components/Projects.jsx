@@ -1,7 +1,18 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
+import useEmblaCarousel from 'embla-carousel-react';
+import ProjectsDescription from './ProjectsDescription.jsx';
+import { projectData } from '../data/ProjectsData.js';
 
 const Projects = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+
+  useEffect(() => {
+    if (emblaApi) {
+      // Embla API is ready
+    }
+  }, [emblaApi])
+
   return (
     <ProjectsContainer>
       <ProjectsBox>
@@ -13,14 +24,18 @@ const Projects = () => {
           <ProjectsCarouselText>Soulful Backend</ProjectsCarouselText>
           <ProjectsCarouselText>Vegetation Station</ProjectsCarouselText>
         </ProjectsCarouselBox>
-        <ProjectsDescriptionBox>
-          <ProjectsDescriptionInfoBox>
-            <ProjectsDescriptionInfo>Projects info</ProjectsDescriptionInfo>
-          </ProjectsDescriptionInfoBox>
-          <ProjectsDescriptionImgBox>
-            <ProjectsDescriptionImg/>
-          </ProjectsDescriptionImgBox>
-        </ProjectsDescriptionBox>
+        <Embla ref={emblaRef}>
+          <EmblaContainer>
+            {projectData.map((e, i) => {
+              return (
+              <EmblaSlide>
+                <ProjectsDescription data={e}/>
+              </EmblaSlide>
+              )
+            })}
+
+          </EmblaContainer>
+        </Embla>
       </ProjectsBox>
     </ProjectsContainer>
   )
@@ -36,13 +51,13 @@ const ProjectsContainer = styled.section`
 `;
 
 const ProjectsBox = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 70%;
-  border: solid white;
 `;
 
 const ProjectsTitleBox = styled.div`
   display: flex;
-  border: solid blue;
 `;
 
 const ProjectsTitle = styled.div`
@@ -54,11 +69,11 @@ const ProjectsTitle = styled.div`
 
 const ProjectsCarouselBox = styled.div`
   display: flex;
-  border: solid green;
   padding: 1%;
 `;
 
 const ProjectsCarouselText = styled.div`
+  font-size: 25px;
   margin-right: 20px;
   color: #fffcf2;
   :hover {
@@ -67,27 +82,19 @@ const ProjectsCarouselText = styled.div`
   }
 `;
 
-const ProjectsDescriptionBox = styled.div`
+const Embla = styled.div`
+  overflow: hidden;
+`;
+
+const EmblaContainer = styled.div`
   display: flex;
-  border: solid red;
-  padding: 10%;
 `;
 
-const ProjectsDescriptionInfoBox = styled.div`
-  border: solid yellow;
+const EmblaSlide = styled.div`
+  flex: 0 0 100%;
+  align-items:
 `;
 
-const ProjectsDescriptionInfo = styled.div`
-  color: #ccc5b9;
-`;
-
-const ProjectsDescriptionImgBox = styled.div`
-  border: solid pink;
-  margin-left: auto;
-`;
-
-const ProjectsDescriptionImg = styled.img`
-`;
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,
