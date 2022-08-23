@@ -33,6 +33,9 @@ const AboutContainer = styled.section`
 `;
 
 const AboutBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   width: 70%;
   border: solid white;
 `;
@@ -60,7 +63,7 @@ const AboutAnimatedName = styled.div`
 const AboutDescriptionBox = styled.div`
   display: flex;
   border: solid green;
-  padding: 10%;
+  height: 100%;
 `;
 
 const AboutDescriptionInfoBox = styled.div`

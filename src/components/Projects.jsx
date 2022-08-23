@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import useEmblaCarousel from 'embla-carousel-react';
 import ProjectsDescription from './ProjectsDescription.jsx';
 import { projectData } from '../data/ProjectsData.js';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Projects = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
@@ -26,14 +27,19 @@ const Projects = () => {
         </ProjectsCarouselBox>
         <Embla ref={emblaRef}>
           <EmblaContainer>
-            {projectData.map((e, i) => {
+            {projectData.map((proj, i) => {
               return (
               <EmblaSlide>
-                <ProjectsDescription data={e}/>
+                <ProjectsGitHub
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.open(proj.repo)
+                  }}
+                />
+                <ProjectsDescription data={proj}/>
               </EmblaSlide>
               )
             })}
-
           </EmblaContainer>
         </Embla>
       </ProjectsBox>
@@ -53,6 +59,7 @@ const ProjectsContainer = styled.section`
 const ProjectsBox = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100vh;
   width: 70%;
 `;
 
@@ -69,7 +76,6 @@ const ProjectsTitle = styled.div`
 
 const ProjectsCarouselBox = styled.div`
   display: flex;
-  padding: 1%;
 `;
 
 const ProjectsCarouselText = styled.div`
@@ -84,17 +90,28 @@ const ProjectsCarouselText = styled.div`
 
 const Embla = styled.div`
   overflow: hidden;
+  height: 100%;
 `;
 
 const EmblaContainer = styled.div`
   display: flex;
+  height: 100%;
+  padding-top: 10%;
 `;
 
 const EmblaSlide = styled.div`
   flex: 0 0 100%;
-  align-items:
 `;
 
+const ProjectsGitHub = styled(GitHubIcon)`
+position: absolute;
+right: 0;
+top: 10%;
+  :hover {
+    cursor: pointer;
+    color: #eb5e28;
+  }
+`;
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useContext } from 'react';
 import styled from 'styled-components';
 
 const ProjectsDescription = ({ data }) => {
@@ -20,7 +20,6 @@ export default ProjectsDescription;
 
 const ProjectsDescriptionBox = styled.div`
   display: flex;
-  padding: 1%;
 `;
 
 
@@ -42,11 +41,12 @@ const ProjectsDescriptionImgBox = styled.span`
 `;
 
 const ProjectsDescriptionImg = styled.img`
-  max-width:100%;
-  max-height:100%;
+  max-width: 100%;
+  max-height: 100%;
   width: auto;
   border-radius: 0 5px 5px 0;
 `;
+
 
 // #fffcf2 floral white,
 //    pop out, headers and titles
