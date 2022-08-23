@@ -29,7 +29,7 @@ const Projects = () => {
           <EmblaContainer>
             {projectData.map((proj, i) => {
               return (
-              <EmblaSlide>
+              <EmblaSlide key={i}>
                 <ProjectsGitHub
                   onClick={(e) => {
                     e.preventDefault();
@@ -97,6 +97,8 @@ const EmblaContainer = styled.div`
   display: flex;
   height: 100%;
   padding-top: 10%;
+  padding-left: 3%;
+  padding-right: 3%;
 `;
 
 const EmblaSlide = styled.div`
@@ -104,14 +106,15 @@ const EmblaSlide = styled.div`
 `;
 
 const ProjectsGitHub = styled(GitHubIcon)`
-position: absolute;
-right: 0;
-top: 10%;
+  position: sticky;
+  top: 10%;
   :hover {
     cursor: pointer;
     color: #eb5e28;
   }
 `;
+
+
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,
