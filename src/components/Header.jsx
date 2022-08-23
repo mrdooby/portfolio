@@ -18,7 +18,7 @@ export default Header;
 // styled components
 const HeaderContainer = styled.section`
   display: flex;
-  position: sticky;
+  position: fixed;
   width: 100%;
   justify-content: flex-end;
 `;
