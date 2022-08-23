@@ -59,7 +59,7 @@ const CircleBackground = styled.div`
 const CircleBackgroundBot = styled.div`
   background-color: #293241;
   border-radius: 0 0 5px 5px;;
-`
+`;
 
 
 
