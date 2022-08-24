@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Header = () => {
   return (
     <HeaderContainer>
+      <NameTab>clayton chin</NameTab>
       <HeaderTab>home</HeaderTab>
       <HeaderTab>about</HeaderTab>
       <HeaderTab>projects</HeaderTab>
@@ -21,6 +22,7 @@ const HeaderContainer = styled.section`
   position: fixed;
   width: 100%;
   justify-content: flex-end;
+  background-color: rgba(25,24,22,0.5)
 `;
 
 const HeaderTab = styled.div`
@@ -30,6 +32,11 @@ const HeaderTab = styled.div`
     cursor: pointer
   }
 `;
+
+const NameTab = styled.div`
+  margin-right: auto;
+  margin-left: 20px;
+`
 
 // #fffcf2 floral white,
 //    pop out, headers and titles
