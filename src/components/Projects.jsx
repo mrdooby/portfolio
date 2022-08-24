@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
-import Paper from "@mui/material/Paper";
+import Card from '@mui/material/Card';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { projectData } from '../data/ProjectsData.js';
 
@@ -17,19 +17,24 @@ const Projects = () => {
           <Grid
           container spacing={0}
           border='solid pink'
-          direction={{ xs: "row", sm: "row"}}
+          direction={{ xs: "row", sm: "column", md: "row"}}
           >
             {projectData.map((proj, index) => (
             <>
               <GridImageBox
               item xs={12} sm={6} md={4}
-              border='solid yellow'
               image={proj.img}
               />
+            </>
+            ))}
+            {projectData.map((proj, index) => (
+            <>
               <GridTextBox
               item xs={12} sm={6} md={4}
-              border='solid white'>
+              >
+                <p>{proj.title}</p>
                 <p>{proj.info}</p>
+                <button>github</button>
               </GridTextBox>
             </>
             ))}
@@ -47,7 +52,6 @@ const ProjectsContainer = styled.section`
   display: flex;
   height: 100vh;
   justify-content: center;
-  overflow: auto;
 `;
 
 const ProjectsBox = styled.div`
@@ -55,7 +59,6 @@ const ProjectsBox = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 70%;
-  border: solid red;
 `;
 
 const ProjectsTitleBox = styled.div`
@@ -72,19 +75,23 @@ const GridContainer = styled.div`
   display: flex;
   height: 100%;
   flex-grow: 1;
+  overflow: auto;
 `;
 
 const GridImageBox = styled(Grid)`
-  display: block;
+  display: flex;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-image: url(${props => props.image});
   height: 50%;
-  background-image: url(${props => props.image})
 `;
 
 const GridTextBox = styled(Grid)`
+  padding: 5px;
+  max-height: 50%;
+  overflow: auto;
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles
