@@ -11,28 +11,33 @@ const Projects = () => {
         <ProjectsTitleBox>
           <ProjectsTitle>Projects</ProjectsTitle>
         </ProjectsTitleBox>
-        <>
-          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-            {/*Render 3 empty black boxes as items of this container*/}
+        <GridContainer>
+          <Grid
+          container spacing={{ xs: 2, md: 0 }}
+          columns={{ xs: 4, sm: 6, md: 3 }}
+          border='solid pink'
+          flexDirection='column'
+          >
             {[0, 1, 2].map((value, index) => (
             <>
-              <Grid item xs={2} sm={4} md={4} key={index} border='solid white'>
+              <Grid
+              item sm={6} key={index} border='solid white'>
                 <div>{value}</div>
               </Grid>
-              <Grid item xs={2} sm={4} md={4} key={index}>
-                <div>{value}</div>
-              </Grid>
+              <GridImageBox item sm={4} key={index} border='solid yellow'>
+                <GridImage />
+              </GridImageBox>
             </>
             ))}
           </Grid>
-        </>
+        </GridContainer>
       </ProjectsBox>
     </ProjectsContainer>
   )
 }
 
 export default Projects;
-
+//src='https://static.zerochan.net/Yor.Briar.full.3632904.jpg'
 // styled components
 const ProjectsContainer = styled.section`
   display: flex;
@@ -58,6 +63,22 @@ const ProjectsTitle = styled.div`
   color: #fffcf2;
 `;
 
+const GridContainer = styled.div`
+  display: flex;
+  height: 100%;
+  flex-grow: 1;
+`;
+
+const GridImageBox = styled(Grid)`
+  display: block;
+  position: relative;
+  background-size: cover;
+  height: 50%;
+  background-image: url('https://static.zerochan.net/Yor.Briar.full.3632904.jpg')
+`;
+
+const GridImage = styled.img`
+`;
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,
