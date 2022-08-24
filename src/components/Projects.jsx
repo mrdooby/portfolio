@@ -14,30 +14,17 @@ const Projects = () => {
           <ProjectsTitle>Projects</ProjectsTitle>
         </ProjectsTitleBox>
         <GridContainer>
-          <Grid
-          container spacing={0}
-          border='solid pink'
-          direction={{ xs: "row", sm: "column", md: "row"}}
-          >
-            {projectData.map((proj, index) => (
-            <>
-              <GridImageBox
-              item xs={12} sm={6} md={4}
-              image={proj.img}
-              />
-            </>
-            ))}
-            {projectData.map((proj, index) => (
-            <>
-              <GridTextBox
-              item xs={12} sm={6} md={4}
-              >
-                <p>{proj.title}</p>
-                <p>{proj.info}</p>
-                <button>github</button>
-              </GridTextBox>
-            </>
-            ))}
+          <Grid container direction='column'>
+            <Grid item border='solid red' height='50%' position='relative'></Grid>
+            <Grid item border='solid red' height='50%' position='relative'>value1</Grid>
+          </Grid>
+          <Grid container direction='column'>
+            <Grid item border='solid blue' height='50%' position='relative'></Grid>
+            <Grid item border='solid blue' height='50%' position='relative'>value2</Grid>
+          </Grid>
+          <Grid container direction='column'>
+            <Grid item border='solid yellow' height='50%' position='relative'></Grid>
+            <Grid item border='solid yellow' height='50%' position='relative'>value3</Grid>
           </Grid>
         </GridContainer>
       </ProjectsBox>
@@ -74,25 +61,10 @@ const ProjectsTitle = styled.div`
 const GridContainer = styled.div`
   display: flex;
   height: 100%;
-  flex-grow: 1;
+  border: solid white;
   overflow: auto;
 `;
 
-const GridImageBox = styled(Grid)`
-  display: flex;
-  position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url(${props => props.image});
-  height: 50%;
-`;
-
-const GridTextBox = styled(Grid)`
-  padding: 5px;
-  max-height: 50%;
-  overflow: auto;
-`;
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,
