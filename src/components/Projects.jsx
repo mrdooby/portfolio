@@ -14,17 +14,15 @@ const Projects = () => {
           <ProjectsTitle>Projects</ProjectsTitle>
         </ProjectsTitleBox>
         <GridContainer>
-          <Grid container direction='column'>
-            <Grid item border='solid red' height='50%' position='relative'></Grid>
-            <Grid item border='solid red' height='50%' position='relative'>value1</Grid>
-          </Grid>
-          <Grid container direction='column'>
-            <Grid item border='solid blue' height='50%' position='relative'></Grid>
-            <Grid item border='solid blue' height='50%' position='relative'>value2</Grid>
-          </Grid>
-          <Grid container direction='column'>
-            <Grid item border='solid yellow' height='50%' position='relative'></Grid>
-            <Grid item border='solid yellow' height='50%' position='relative'>value3</Grid>
+          <Grid container spacing={0}
+          border='solid pink'
+          direction='column'>
+            <GridImage item border='solid red' position='relative' md={6}></GridImage>
+            <GridText item border='solid red' position='relative' md={6}>value1</GridText>
+            <GridImage item border='solid blue' position='relative' md={6}></GridImage>
+            <GridText item border='solid blue' position='relative' md={6}>value2</GridText>
+            <GridImage item border='solid yellow' position='relative' md={6}></GridImage>
+            <GridText item border='solid yellow' position='relative' md={6}>value3</GridText>
           </Grid>
         </GridContainer>
       </ProjectsBox>
@@ -33,7 +31,7 @@ const Projects = () => {
 }
 
 export default Projects;
-//src='https://static.zerochan.net/Yor.Briar.full.3632904.jpg'
+//src='https://static.zerochan.net/Yor.Briar.full.3632904.jpg' xs 599, sm 899, md 1199, lg 1535, xl +
 // styled components
 const ProjectsContainer = styled.section`
   display: flex;
@@ -63,8 +61,14 @@ const GridContainer = styled.div`
   height: 100%;
   border: solid white;
   overflow: auto;
+  padding: 5px;
 `;
 
+const GridText = styled(Grid)`
+`;
+
+const GridImage = styled(Grid)`
+`;
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,
