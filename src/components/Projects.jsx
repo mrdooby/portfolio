@@ -1,18 +1,9 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
-import useEmblaCarousel from 'embla-carousel-react';
-import ProjectsDescription from './ProjectsDescription.jsx';
-import { projectData } from '../data/ProjectsData.js';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import Grid from '@mui/material/Grid';
+import Paper from "@mui/material/Paper";
 
 const Projects = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
-
-  useEffect(() => {
-    if (emblaApi) {
-      // Embla API is ready
-    }
-  }, [emblaApi])
 
   return (
     <ProjectsContainer>
@@ -20,28 +11,21 @@ const Projects = () => {
         <ProjectsTitleBox>
           <ProjectsTitle>Projects</ProjectsTitle>
         </ProjectsTitleBox>
-        <ProjectsCarouselBox>
-          <ProjectsCarouselText>Project Atelier</ProjectsCarouselText>
-          <ProjectsCarouselText>Soulful Backend</ProjectsCarouselText>
-          <ProjectsCarouselText>Vegetation Station</ProjectsCarouselText>
-        </ProjectsCarouselBox>
-        <Embla ref={emblaRef}>
-          <EmblaContainer>
-            {projectData.map((proj, i) => {
-              return (
-              <EmblaSlide key={i}>
-                <ProjectsGitHub
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(proj.repo)
-                  }}
-                />
-                <ProjectsDescription data={proj}/>
-              </EmblaSlide>
-              )
-            })}
-          </EmblaContainer>
-        </Embla>
+        <>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            {/*Render 3 empty black boxes as items of this container*/}
+            {[0, 1, 2].map((value, index) => (
+            <>
+              <Grid item xs={2} sm={4} md={4} key={index} border='solid white'>
+                <div>{value}</div>
+              </Grid>
+              <Grid item xs={2} sm={4} md={4} key={index}>
+                <div>{value}</div>
+              </Grid>
+            </>
+            ))}
+          </Grid>
+        </>
       </ProjectsBox>
     </ProjectsContainer>
   )
@@ -61,6 +45,7 @@ const ProjectsBox = styled.div`
   flex-direction: column;
   height: 100vh;
   width: 70%;
+  border: solid red;
 `;
 
 const ProjectsTitleBox = styled.div`
@@ -69,51 +54,9 @@ const ProjectsTitleBox = styled.div`
 
 const ProjectsTitle = styled.div`
   font-size: 100px;
-  padding-left: 1%;
   font-weight: bold;
   color: #fffcf2;
 `;
-
-const ProjectsCarouselBox = styled.div`
-  display: flex;
-`;
-
-const ProjectsCarouselText = styled.div`
-  font-size: 25px;
-  padding-left: 1%;
-  margin-right: 20px;
-  color: #fffcf2;
-  :hover {
-    color: #eb5e28;
-    cursor: pointer
-  }
-`;
-
-const Embla = styled.div`
-  overflow: hidden;
-  height: 100%;
-`;
-
-const EmblaContainer = styled.div`
-  display: flex;
-  height: 100%;
-  padding-top: 5%;
-`;
-
-const EmblaSlide = styled.div`
-  flex: 0 0 100%;
-
-`;
-
-const ProjectsGitHub = styled(GitHubIcon)`
-  position: sticky;
-  top: 0;
-  :hover {
-    cursor: pointer;
-    color: #eb5e28;
-  }
-`;
-
 
 // #fffcf2 floral white,
 //    pop out, headers and titles

@@ -22,7 +22,8 @@ const HeaderContainer = styled.section`
   position: fixed;
   width: 100%;
   justify-content: flex-end;
-  background-color: rgba(25,24,22,0.5)
+  background-color: rgba(64,61,57,0.5);
+  z-index: 10;
 `;
 
 const HeaderTab = styled.div`
