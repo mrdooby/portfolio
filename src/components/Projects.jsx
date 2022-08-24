@@ -2,6 +2,8 @@ import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import Paper from "@mui/material/Paper";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { projectData } from '../data/ProjectsData.js';
 
 const Projects = () => {
 
@@ -13,20 +15,22 @@ const Projects = () => {
         </ProjectsTitleBox>
         <GridContainer>
           <Grid
-          container spacing={{ xs: 2, md: 0 }}
-          columns={{ xs: 4, sm: 6, md: 3 }}
+          container spacing={0}
           border='solid pink'
-          flexDirection='column'
+          direction={{ xs: "row", sm: "row"}}
           >
-            {[0, 1, 2].map((value, index) => (
+            {projectData.map((proj, index) => (
             <>
-              <Grid
-              item sm={6} key={index} border='solid white'>
-                <div>{value}</div>
-              </Grid>
-              <GridImageBox item sm={4} key={index} border='solid yellow'>
-                <GridImage />
-              </GridImageBox>
+              <GridImageBox
+              item xs={12} sm={6} md={4}
+              border='solid yellow'
+              image={proj.img}
+              />
+              <GridTextBox
+              item xs={12} sm={6} md={4}
+              border='solid white'>
+                <p>{proj.info}</p>
+              </GridTextBox>
             </>
             ))}
           </Grid>
@@ -43,6 +47,7 @@ const ProjectsContainer = styled.section`
   display: flex;
   height: 100vh;
   justify-content: center;
+  overflow: auto;
 `;
 
 const ProjectsBox = styled.div`
@@ -73,11 +78,13 @@ const GridImageBox = styled(Grid)`
   display: block;
   position: relative;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 50%;
-  background-image: url('https://static.zerochan.net/Yor.Briar.full.3632904.jpg')
+  background-image: url(${props => props.image})
 `;
 
-const GridImage = styled.img`
+const GridTextBox = styled(Grid)`
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles
