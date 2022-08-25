@@ -14,8 +14,8 @@ const App = () => {
       <Header/>
       <ColorScheme/>
       <Home/>
-      <About/>
       <Projects/>
+      <About/>
       <Contact/>
       <Footer/>
     </AppContainer>
