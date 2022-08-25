@@ -22,6 +22,7 @@ const Projects = () => {
             <GridImage item
             position='relative' xs={12} sm={12} md={6} height={{xs: '50%'}}
             image={projectData[0].img} />
+            <div/>
             <GridText container item
             position='relative' xs={12} sm={12} md={6}
             height='50%' width={{ xs: '100%', sm: '100%', md: '33.33%'}}>
@@ -29,9 +30,13 @@ const Projects = () => {
               <>{projectData[0].info}</>
               <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
             </GridText>
+            <div/>
+
             <GridImage item
             position='relative' xs={12} sm={12} md={6}
             height={{xs: '50%'}} image={projectData[1].img}/>
+                        <div/>
+
             <GridText container item
             position='relative' xs={12} sm={12} md={6}
             height='50%' width={{ xs: '100%', sm: '100%', md: '33.33%'}}>
@@ -39,9 +44,13 @@ const Projects = () => {
               <>{projectData[1].info}</>
               <GithubButton onClick={(e) => {window.open(`${projectData[1].repo}`)}}><GitStyle/></GithubButton>
             </GridText>
+            <div/>
+
             <GridImage item
             position='relative' xs={12} sm={12} md={6}
             height={{xs: '50%'}} image={projectData[2].img}/>
+                        <div/>
+
             <GridText container item
             position='relative' xs={12} sm={12} md={6}
             height='50%' width={{ xs: '100%', sm: '100%', md: '33.33%'}}>
