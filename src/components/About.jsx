@@ -1,28 +1,29 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styled, { keyframes } from 'styled-components';
-import Typed from 'react-typed';
+import { text } from '../data/AboutData.js';
+import Grid from '@mui/material/Grid';
+
 
 const About = () => {
   return (
     <AboutContainer>
-      <AboutBox>
-        <AboutTitleBox>
-          <AboutTitle>about me&nbsp;</AboutTitle>
-            <AboutAnimatedName
-              strings={['dog lover', 'bowler', 'gym rat', 'foodie', 'clayton chin']}
-              typeSpeed={50}
-              backSpeed={50}
-            />
-        </AboutTitleBox>
-        <AboutDescriptionBox>
-          <AboutDescriptionInfoBox>
-            <AboutDescriptionInfo>about me information</AboutDescriptionInfo>
-          </AboutDescriptionInfoBox>
-          <AboutDescriptionImgBox>
-            <AboutDescriptionImg/>
-          </AboutDescriptionImgBox>
-        </AboutDescriptionBox>
-      </AboutBox>
+      <AboutTitle>
+        about me title
+        <PersonIcon>me</PersonIcon>
+        <KenjiIcon>kenji</KenjiIcon>
+        <YuffieIcon>yuffie</YuffieIcon>
+      </AboutTitle>
+      <Grid container spacing={3} position='relative'
+      marginBottom='auto' height={{md: '100%'}}
+      border='solid blue'
+      >
+        <Grid item md={6} padding='20px'>
+          <AboutText>{text}</AboutText>
+        </Grid>
+        <Grid item md={6} position='relative' padding='20px'>
+          <AboutPhoto>hi</AboutPhoto>
+        </Grid>
+    </Grid>
     </AboutContainer>
   )
 }
@@ -35,55 +36,49 @@ const AboutContainer = styled.section`
   display: flex;
   height: 100vh;
   justify-content: center;
-`;
-
-const AboutBox = styled.div`
-  display: flex;
+  border: solid gray;
   flex-direction: column;
-  height: 100vh;
-  width: 70%;
-  border: solid white;
-`;
-
-const AboutTitleBox = styled.div`
-  display: flex;
-  border: solid blue;
 `;
 
 const AboutTitle = styled.div`
-  font-size: 100px;
-  padding-left: 1%;
-  font-weight: bold;
-  color: #fffcf2;
-`;
-
-const AboutAnimatedName = styled(Typed)`
-  font-size: 100px;
-  padding-right: 1%;
-  font-weight: bold;
-  color: #fffcf2;
-`;
-
-const AboutDescriptionBox = styled.div`
   display: flex;
-  border: solid green;
-  height: 100%;
-`;
-
-const AboutDescriptionInfoBox = styled.div`
-  border: solid red;
-`;
-
-const AboutDescriptionInfo = styled.div`
-  color: #ccc5b9;
-`;
-
-const AboutDescriptionImgBox = styled.div`
   border: solid pink;
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 0;
+`;
+
+const PersonIcon = styled.span`
+  display: flex;
+  margin-left: auto;
+`
+
+const KenjiIcon = styled.span`
+  display: flex;
   margin-left: auto;
 `;
 
-const AboutDescriptionImg = styled.img`
+const YuffieIcon = styled.span`
+  display: flex;
+  margin-left: auto;
+`;
+
+const AboutText = styled.div`
+  display: flex;
+  border: solid green;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 1vw;
+`;
+
+const AboutPhoto = styled.div`
+  display: flex;
+  border: solid yellow;
+  background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/464/818/f2a.jpg');
+  height: 100%;
 `;
 
 // #fffcf2 floral white,

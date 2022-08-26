@@ -1,8 +1,6 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { projectData } from '../data/ProjectsData.js';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
@@ -22,7 +20,6 @@ const Projects = () => {
             <GridImage item
             position='relative' xs={12} sm={12} md={6} height={{xs: '50%'}}
             image={projectData[0].img} />
-            <div/>
             <GridText container item
             position='relative' xs={12} sm={12} md={6}
             height='50%' width={{ xs: '100%', sm: '100%', md: '33.33%'}}>
@@ -30,13 +27,9 @@ const Projects = () => {
               <>{projectData[0].info}</>
               <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
             </GridText>
-            <div/>
-
             <GridImage item
             position='relative' xs={12} sm={12} md={6}
             height={{xs: '50%'}} image={projectData[1].img}/>
-                        <div/>
-
             <GridText container item
             position='relative' xs={12} sm={12} md={6}
             height='50%' width={{ xs: '100%', sm: '100%', md: '33.33%'}}>
@@ -44,13 +37,9 @@ const Projects = () => {
               <>{projectData[1].info}</>
               <GithubButton onClick={(e) => {window.open(`${projectData[1].repo}`)}}><GitStyle/></GithubButton>
             </GridText>
-            <div/>
-
             <GridImage item
             position='relative' xs={12} sm={12} md={6}
             height={{xs: '50%'}} image={projectData[2].img}/>
-                        <div/>
-
             <GridText container item
             position='relative' xs={12} sm={12} md={6}
             height='50%' width={{ xs: '100%', sm: '100%', md: '33.33%'}}>
@@ -86,7 +75,7 @@ const ProjectsTitleBox = styled.div`
 `;
 
 const ProjectsTitle = styled.div`
-  font-size: 100px;
+  font-size: 6vw;
   font-weight: bold;
   color: #fffcf2;
 `;
@@ -121,11 +110,12 @@ const GridImage = styled(Grid)`
 const GithubButton = styled.div`
   border: solid white;
   height: 10%;
-  width: 50%;
+  width: 30%;
   margin-top: auto;
   padding: 5px;
   border-radius: 5px;
   border-color: #fffcf2;
+  text-align: center;
   :hover {
     border-color: #eb5e28;
     box-shadow: 0 0 3px #eb5e28;

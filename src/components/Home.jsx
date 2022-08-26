@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -49,8 +49,6 @@ const HomeContainer = styled.section`
 const HomeTextBox = styled.div`
   display: flex;
   padding: 10px;
-  height: 50%;
-  width: 50%;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -64,14 +62,14 @@ const TextAnimation = keyframes`
 
 const HomeText = styled.span`
   display: flex;
-  font: 700 8vw "Oswald", sans-serif;
+  font: 700 12vw "Oswald", sans-serif;
   text-shadow: 0 0 80px rgba(255,255,255,.5);
   text-align: center;
   background: url(https://i.kym-cdn.com/photos/images/newsfeed/001/464/818/f2a.jpg) repeat;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: ${TextAnimation} 5s linear infinite;
+  -webkit-animation: ${TextAnimation} 10s linear infinite;
   -webkit-transform: translate3d(0,0,0);
   -webkit-backface-visibility: hidden;
 `;
