@@ -8,10 +8,7 @@ const Projects = () => {
 
   return (
     <ProjectsContainer>
-      <ProjectsBox>
-        <ProjectsTitleBox>
-          <ProjectsTitle>Projects</ProjectsTitle>
-        </ProjectsTitleBox>
+      <ProjectsTitle>Projects</ProjectsTitle>
         <GridContainer>
           <Grid container spacing={0}
           direction={{xs: 'row', sm: 'row', md: 'column'}}
@@ -19,7 +16,9 @@ const Projects = () => {
           >
             <GridImage item
             position='relative' xs={12} sm={12} md={6} height={{xs: '50%'}}
-            image={projectData[0].img} />
+            >
+              <Image/>
+            </GridImage>
             <GridText container item
             position='relative' xs={12} sm={12} md={6}
             height='50%' width={{ xs: '100%', sm: '100%', md: '33.33%'}}>
@@ -49,7 +48,6 @@ const Projects = () => {
             </GridText>
           </Grid>
         </GridContainer>
-      </ProjectsBox>
     </ProjectsContainer>
   )
 }
@@ -61,22 +59,16 @@ const ProjectsContainer = styled.section`
   display: flex;
   height: 100vh;
   justify-content: center;
-`;
-
-const ProjectsBox = styled.div`
-  display: flex;
+  border: solid gray;
   flex-direction: column;
-  height: 100vh;
-  width: 70%;
-`;
-
-const ProjectsTitleBox = styled.div`
-  display: flex;
 `;
 
 const ProjectsTitle = styled.div`
+  display: flex;
+  border: solid pink;
   font-size: 6vw;
   font-weight: bold;
+  margin-bottom: 0;
   color: #fffcf2;
 `;
 
@@ -105,6 +97,13 @@ const GridImage = styled(Grid)`
   max-height: 100%;
   border-radius: 5px;
   box-shadow: 1px 1px 3px;
+`;
+
+const Image = styled.div`
+  display: flex;
+  border: solid yellow;
+  background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/464/818/f2a.jpg');
+  height: 100%;
 `;
 
 const GithubButton = styled.div`

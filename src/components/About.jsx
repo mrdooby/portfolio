@@ -21,7 +21,7 @@ const About = () => {
           <AboutText>{text}</AboutText>
         </Grid>
         <Grid item md={6} position='relative' padding='20px'>
-          <AboutPhoto>hi</AboutPhoto>
+          <AboutPhoto></AboutPhoto>
         </Grid>
     </Grid>
     </AboutContainer>
@@ -46,6 +46,7 @@ const AboutTitle = styled.div`
   font-size: 6vw;
   font-weight: bold;
   margin-bottom: 0;
+  color: #fffcf2;
 `;
 
 const PersonIcon = styled.span`
