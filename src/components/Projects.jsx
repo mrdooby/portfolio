@@ -4,43 +4,47 @@ import Grid from '@mui/material/Grid';
 import { projectData } from '../data/ProjectsData.js';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Card from '@mui/material/Card';
+import ColorScheme from './ColorScheme.jsx';
 
 const Projects = () => {
 
   return (
     <ProjectsContainer>
       <ProjectsTitle>Projects</ProjectsTitle>
-      <Grid container spacing={1} position='relative'
+      <Grid container spacing={0} position='relative'
       marginBottom='auto' height={{md: '100%'}}
-      border='solid blue' direction='row' paddingLeft='12px'
+      border='solid blue' direction='row'
+      overflow='auto'
       >
-        <Grid container direction='column' height='100%' width='calc(100%/3)'>
-          <Grid item md={6} position='relative' padding='20px'>
-            <ProjectsPhoto image={projectData[0].img}></ProjectsPhoto>
+        <Grid container direction='row' height='50%' width='100%%'>
+          <Grid item md={6} position='relative'>
+            <ProjectsPhoto image={projectData[0].img}>
+              <ColorsBox><ColorScheme/></ColorsBox>
+            </ProjectsPhoto>
           </Grid>
-          <Grid item md={6} padding='20px'>
+          <Grid item md={6}>
             <ProjectsText>
               {projectData[0].title}<br/>{projectData[0].info}
               <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
             </ProjectsText>
           </Grid>
         </Grid>
-        <Grid container direction='column' height='100%' width='calc(100%/3)'>
-        <Grid item md={6} position='relative' padding='20px'>
+        <Grid container direction='row' height='50%' width='100%%'>
+        <Grid item md={6} position='relative'>
             <ProjectsPhoto image={projectData[1].img}></ProjectsPhoto>
           </Grid>
-          <Grid item md={6} padding='20px'>
+          <Grid item md={6}>
           <ProjectsText>
             {projectData[1].title}<br/>{projectData[1].info}
             <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
           </ProjectsText>
           </Grid>
         </Grid>
-        <Grid container direction='column' height='100%' width='calc(100%/3)'>
-          <Grid item md={6} position='relative' padding='20px'>
+        <Grid container direction='row' height='50%' width='100%%'>
+        <Grid item md={6} position='relative'>
             <ProjectsPhoto image={projectData[2].img}></ProjectsPhoto>
           </Grid>
-          <Grid item md={6} padding='20px'>
+          <Grid item md={6}>
           <ProjectsText>
             {projectData[2].title}<br/>{projectData[2].info}
             <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
@@ -100,6 +104,7 @@ const GithubButton = styled.div`
   padding: 5px;
   border-radius: 5px;
   border-color: #fffcf2;
+  margin-bottom: 5px;
   :hover {
     border-color: #eb5e28;
     box-shadow: 0 0 3px #eb5e28;
@@ -117,6 +122,10 @@ const GitStyle = styled(GitHubIcon)`
     color: #eb5e28;
     transition: all .2s ease-in-out;
   }
+`;
+
+const ColorsBox = styled(ColorScheme)`
+  display: none;
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles

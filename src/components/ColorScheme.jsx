@@ -42,26 +42,20 @@ export default ColorScheme;
 
 // styled components
 const ColorSchemeContainer = styled.section`
-  position: fixed;
-  bottom: 0;
-  margin: 5px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const CircleBackgroundTop = styled.div`
-  background-color: #293241;
   border-radius: 5px 5px 0 0;
 `;
 
 const CircleBackground = styled.div`
-  background-color: #293241;
 `;
 
 const CircleBackgroundBot = styled.div`
-  background-color: #293241;
   border-radius: 0 0 5px 5px;;
 `;
-
-
 
 const animLineUp = keyframes`
   0% {

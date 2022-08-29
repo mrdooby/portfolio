@@ -12,7 +12,6 @@ const App = () => {
   return (
     <AppContainer>
       <Header/>
-      <ColorScheme/>
       <Home/>
       <Projects/>
       <About/>
