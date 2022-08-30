@@ -1,39 +1,13 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const ColorScheme = () => {
+const ColorScheme = (props) => {
   return (
     <ColorSchemeContainer>
-      <CircleSectionBox1>
-        <CircleBackgroundTop>
-          <ColorSchemeCircle1></ColorSchemeCircle1>
-        </CircleBackgroundTop>
-        <Circle1Text>#fffcf2 floral white</Circle1Text>
-      </CircleSectionBox1>
-      <CircleSectionBox2>
-        <CircleBackground>
-          <ColorSchemeCircle2></ColorSchemeCircle2>
-        </CircleBackground>
-        <Circle2Text>#ccc5b9 pale silver</Circle2Text>
-      </CircleSectionBox2>
-      <CircleSectionBox3>
-        <CircleBackground>
-          <ColorSchemeCircle3></ColorSchemeCircle3>
-        </CircleBackground>
-        <Circle3Text>#403d39 black olive</Circle3Text>
-      </CircleSectionBox3>
-      <CircleSectionBox4>
-        <CircleBackground>
-          <ColorSchemeCircle4></ColorSchemeCircle4>
-        </CircleBackground>
-        <Circle4Text>#252422 eerie black</Circle4Text>
-      </CircleSectionBox4>
-      <CircleSectionBox5>
-        <CircleBackgroundBot>
-          <ColorSchemeCircle5></ColorSchemeCircle5>
-        </CircleBackgroundBot>
-        <Circle5Text>#eb5e28 flame</Circle5Text>
-      </CircleSectionBox5>
+      <CircleSectionBox>
+        <ColorSchemeCircle color={props.color}/>
+        <CircleText>{props.color}</CircleText>
+      </CircleSectionBox>
     </ColorSchemeContainer>
   )
 }
@@ -44,17 +18,6 @@ export default ColorScheme;
 const ColorSchemeContainer = styled.section`
   display: flex;
   flex-direction: column;
-`;
-
-const CircleBackgroundTop = styled.div`
-  border-radius: 5px 5px 0 0;
-`;
-
-const CircleBackground = styled.div`
-`;
-
-const CircleBackgroundBot = styled.div`
-  border-radius: 0 0 5px 5px;;
 `;
 
 const animLineUp = keyframes`
@@ -75,90 +38,22 @@ const animLineUp = keyframes`
   }
 `;
 
-const CircleSectionBox1 = styled.div`
-  display: flex;
-`;
-const CircleSectionBox2 = styled.div`
-  display: flex;
-`;
-const CircleSectionBox3 = styled.div`
-  display: flex;
-`;
-const CircleSectionBox4 = styled.div`
-  display: flex;
-`;
-const CircleSectionBox5 = styled.div`
+const CircleSectionBox = styled.div`
   display: flex;
 `;
 
-const Circle1Text = styled.span`
+const CircleText = styled.span`
   visibility: hidden;
-  ${CircleSectionBox1}:hover & {
-    visibility: visible;
-    animation: 2s ${animLineUp} ease-out;
-  }
-`;
-const Circle2Text = styled.span`
-  visibility: hidden;
-  ${CircleSectionBox2}:hover & {
-    visibility: visible;
-    animation: 2s ${animLineUp} ease-out;
-  }
-`;
-const Circle3Text = styled.span`
-  visibility: hidden;
-  ${CircleSectionBox3}:hover & {
-    visibility: visible;
-    animation: 2s ${animLineUp} ease-out;
-  }
-`;
-const Circle4Text = styled.span`
-  visibility: hidden;
-  ${CircleSectionBox4}:hover & {
-    visibility: visible;
-    animation: 2s ${animLineUp} ease-out;
-  }
-`;
-const Circle5Text = styled.span`
-  visibility: hidden;
-  ${CircleSectionBox5}:hover & {
+  ${CircleSectionBox}:hover & {
     visibility: visible;
     animation: 2s ${animLineUp} ease-out;
   }
 `;
 
-const ColorSchemeCircle1 = styled.div`
+const ColorSchemeCircle = styled.div`
   height: 1vw;
   width: 1vw;
-  background-color: #fffcf2;
-  border-radius: 100%;
-  margin: 3px;
-`;
-const ColorSchemeCircle2 = styled.div`
-  height: 1vw;
-  width: 1vw;
-  background-color: #ccc5b9;
-  border-radius: 100%;
-  margin: 3px;
-`;
-const ColorSchemeCircle3 = styled.div`
-  height: 1vw;
-  width: 1vw;
-  background-color: #403d39;
-  border-radius: 100%;
-  margin: 3px;
-`;
-const ColorSchemeCircle4 = styled.div`
-  height: 1vw;
-  width: 1vw;
-  background-color: #252422;
-  border-radius: 100%;
-  margin: 3px;
-`;
-const ColorSchemeCircle5 = styled.div`
-  height: 1vw;
-  width: 1vw;
-  background-color: #eb5e28;
+  background-color: ${props => props.color};
   border-radius: 100%;
   margin: 3px;
 `;

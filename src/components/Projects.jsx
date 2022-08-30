@@ -19,7 +19,13 @@ const Projects = () => {
         <Grid container direction='row' height='50%' width='100%%'>
           <Grid item md={6} position='relative'>
             <ProjectsPhoto image={projectData[0].img}>
-              <ColorsBox><ColorScheme/></ColorsBox>
+              <ColorsBox>
+                Color Palette
+                {['#3A606E','#607B7D','#828E82','#EF8354'].map((hex) => {
+                  console.log(hex);
+                  return <ColorScheme color={hex}/>
+                })}
+              </ColorsBox>
             </ProjectsPhoto>
           </Grid>
           <Grid item md={6}>
@@ -37,12 +43,28 @@ const Projects = () => {
           </ProjectsText>
           </Grid>
           <Grid item md={6} position='relative'>
-            <ProjectsPhoto image={projectData[1].img}></ProjectsPhoto>
+            <ProjectsPhoto image={projectData[1].img}>
+              <ColorsBox>
+                  Color Palette
+                  {['#D6CCC2','#EDEDE9','#D5BDAF','#F5EBE0','#807D7D'].map((hex) => {
+                    console.log(hex);
+                    return <ColorScheme color={hex}/>
+                  })}
+                </ColorsBox>
+            </ProjectsPhoto>
           </Grid>
         </Grid>
         <Grid container direction='row' height='50%' width='100%%'>
         <Grid item md={6} position='relative'>
-            <ProjectsPhoto image={projectData[2].img}></ProjectsPhoto>
+            <ProjectsPhoto image={projectData[2].img}>
+              <ColorsBox>
+                  Color Palette
+                  {['#606C38','#283618','#FEFAE0','#DDA15E', '#BC6C25'].map((hex) => {
+                    console.log(hex);
+                    return <ColorScheme color={hex}/>
+                  })}
+                </ColorsBox>
+            </ProjectsPhoto>
           </Grid>
           <Grid item md={6}>
           <ProjectsText>
@@ -82,7 +104,7 @@ const ProjectsPhoto = styled.div`
   height: 100%;
   background-size: cover;
   :hover {
-    background: linear-gradient(rgba(100,100,100,.7), rgba(255,255,255,.7)), url(${props => props.image});
+    background: linear-gradient(rgba(100,100,100,.7), rgba(100,100,100,.7)), url(${props => props.image});
     background-size: cover;
 `;
 
