@@ -30,14 +30,14 @@ const Projects = () => {
           </Grid>
         </Grid>
         <Grid container direction='row' height='50%' width='100%%'>
-        <Grid item md={6} position='relative'>
-            <ProjectsPhoto image={projectData[1].img}></ProjectsPhoto>
-          </Grid>
           <Grid item md={6}>
           <ProjectsText>
             {projectData[1].title}<br/>{projectData[1].info}
             <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
           </ProjectsText>
+          </Grid>
+          <Grid item md={6} position='relative'>
+            <ProjectsPhoto image={projectData[1].img}></ProjectsPhoto>
           </Grid>
         </Grid>
         <Grid container direction='row' height='50%' width='100%%'>
@@ -78,22 +78,23 @@ const ProjectsTitle = styled.div`
 
 const ProjectsPhoto = styled.div`
   display: flex;
-  border: solid yellow;
   background-image: url(${props => props.image});
   height: 100%;
   background-size: cover;
+  :hover {
+    background: linear-gradient(rgba(100,100,100,.7), rgba(255,255,255,.7)), url(${props => props.image});
+    background-size: cover;
 `;
 
 const ProjectsText = styled.div`
   display: flex;
-  border: solid green;
   height: 100%;
   justify-content: center;
   align-items: center;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding: 5px;
   font-size: 1vw;
   flex-direction: column;
+  background-color: #403d39;
 `;
 
 const GithubButton = styled.div`
@@ -124,8 +125,11 @@ const GitStyle = styled(GitHubIcon)`
   }
 `;
 
-const ColorsBox = styled(ColorScheme)`
-  display: none;
+const ColorsBox = styled.div`
+  visibility: hidden;
+  ${ProjectsPhoto}:hover & {
+    visibility: visible;
+  }
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles
