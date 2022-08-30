@@ -5,6 +5,9 @@ import { projectData } from '../data/ProjectsData.js';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Card from '@mui/material/Card';
 import ColorScheme from './ColorScheme.jsx';
+import { FaReact, FaNodeJs, FaAws } from 'react-icons/fa';
+import { SiExpress, SiJest, SiJavascript } from 'react-icons/si';
+import { IconContext } from "react-icons";
 
 const Projects = () => {
 
@@ -13,8 +16,7 @@ const Projects = () => {
       <ProjectsTitle>Projects</ProjectsTitle>
       <Grid container spacing={0} position='relative'
       marginBottom='auto' height={{md: '100%'}}
-      border='solid blue' direction='row'
-      overflow='auto'
+      direction='row' overflow='auto'
       >
         <Grid container direction='row' height='50%' width='100%%'>
           <Grid item md={6} position='relative'>
@@ -28,15 +30,20 @@ const Projects = () => {
               </ColorsBox>
             </ProjectsPhoto>
           </Grid>
-          <Grid item md={6}>
+          <Grid container item md={6} direction='row'>
             <ProjectsText>
-              {projectData[0].title}<br/>{projectData[0].info}
+              <Text>{projectData[0].title}<br/>{projectData[0].info}</Text>
+              <Icons>
+                <IconContext.Provider value={{size: 42}}>
+                  <SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
+                </IconContext.Provider>
+              </Icons>
               <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
             </ProjectsText>
           </Grid>
         </Grid>
         <Grid container direction='row' height='50%' width='100%%'>
-          <Grid item md={6}>
+          <Grid item md={6} border='solid green'>
           <ProjectsText>
             {projectData[1].title}<br/>{projectData[1].info}
             <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
@@ -83,15 +90,12 @@ export default Projects;
 // styled components
 const ProjectsContainer = styled.section`
   display: flex;
-  height: 100vh;
   justify-content: center;
-  border: solid gray;
   flex-direction: column;
 `;
 
 const ProjectsTitle = styled.div`
   display: flex;
-  border: solid pink;
   font-size: 6vw;
   font-weight: bold;
   margin-bottom: 0;
@@ -101,7 +105,7 @@ const ProjectsTitle = styled.div`
 const ProjectsPhoto = styled.div`
   display: flex;
   background-image: url(${props => props.image});
-  height: 100%;
+  height: 50vh;
   background-size: cover;
   :hover {
     background: linear-gradient(rgba(100,100,100,.7), rgba(100,100,100,.7)), url(${props => props.image});
@@ -110,15 +114,17 @@ const ProjectsPhoto = styled.div`
 
 const ProjectsText = styled.div`
   display: flex;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
+  height: 50vh;
   font-size: 1vw;
   flex-direction: column;
   background-color: #403d39;
+  border: solid blue;
 `;
 
+const Text = styled.div`
+  border: solid pink;
+  width: 90%;
+`;
 const GithubButton = styled.div`
   border: solid white;
   height: 10%;
@@ -152,6 +158,17 @@ const ColorsBox = styled.div`
   ${ProjectsPhoto}:hover & {
     visibility: visible;
   }
+`;
+
+const Icons = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: solid white;
+  margin-left: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles

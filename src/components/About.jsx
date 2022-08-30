@@ -38,6 +38,7 @@ const AboutContainer = styled.section`
   justify-content: center;
   border: solid gray;
   flex-direction: column;
+  position: relative;
 `;
 
 const AboutTitle = styled.div`
@@ -78,7 +79,7 @@ const AboutText = styled.div`
 const AboutPhoto = styled.div`
   display: flex;
   border: solid yellow;
-  background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/464/818/f2a.jpg');
+  background-image: url(https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/01/931/523/Dwayne-Rock-Johnson-GETTY-1.jpg?ve=1&tl=1);
   height: 100%;
 `;
 

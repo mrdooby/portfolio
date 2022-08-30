@@ -65,7 +65,7 @@ const HomeText = styled.span`
   font: 700 12vw "Oswald", sans-serif;
   text-shadow: 0 0 80px rgba(255,255,255,.5);
   text-align: center;
-  background: url(https://i.kym-cdn.com/photos/images/newsfeed/001/464/818/f2a.jpg) repeat;
+  background: url(https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/01/931/523/Dwayne-Rock-Johnson-GETTY-1.jpg?ve=1&tl=1) repeat;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
