@@ -6,7 +6,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Card from '@mui/material/Card';
 import ColorScheme from './ColorScheme.jsx';
 import { FaReact, FaNodeJs, FaAws } from 'react-icons/fa';
-import { SiExpress, SiJest, SiJavascript } from 'react-icons/si';
+import { SiExpress, SiJest, SiJavascript, SiPostgresql } from 'react-icons/si';
+import { TbBrandReactNative } from 'react-icons/tb';
 import { IconContext } from "react-icons";
 
 const Projects = () => {
@@ -32,7 +33,7 @@ const Projects = () => {
           </Grid>
           <Grid container item md={6} direction='row'>
             <ProjectsText>
-              <Text>{projectData[0].title}<br/>{projectData[0].info}</Text>
+              <Text><TextTitle>{projectData[0].title}</TextTitle><br/>{projectData[0].info}</Text>
               <Icons>
                 <IconContext.Provider value={{size: 42}}>
                   <SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
@@ -43,9 +44,14 @@ const Projects = () => {
           </Grid>
         </Grid>
         <Grid container direction='row' height='50%' width='100%%'>
-          <Grid item md={6} border='solid green'>
+          <Grid item md={6}>
           <ProjectsText>
-            {projectData[1].title}<br/>{projectData[1].info}
+            <Text><TextTitle>{projectData[1].title}</TextTitle><br/>{projectData[1].info}</Text>
+            <Icons>
+                <IconContext.Provider value={{size: 42}}>
+                  <SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
+                </IconContext.Provider>
+            </Icons>
             <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
           </ProjectsText>
           </Grid>
@@ -75,7 +81,12 @@ const Projects = () => {
           </Grid>
           <Grid item md={6}>
           <ProjectsText>
-            {projectData[2].title}<br/>{projectData[2].info}
+            <Text><TextTitle>{projectData[2].title}</TextTitle><br/>{projectData[2].info}</Text>
+            <Icons>
+                <IconContext.Provider value={{size: 42}}>
+                  <SiPostgresql/><SiExpress/><TbBrandReactNative/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
+                </IconContext.Provider>
+              </Icons>
             <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
             </ProjectsText>
           </Grid>
@@ -118,18 +129,17 @@ const ProjectsText = styled.div`
   font-size: 1vw;
   flex-direction: column;
   background-color: #403d39;
-  border: solid blue;
+  align-items: center;
 `;
 
 const Text = styled.div`
-  border: solid pink;
-  width: 90%;
+  padding: 10px;
+  white-space: break-spaces;
 `;
 const GithubButton = styled.div`
   border: solid white;
   height: 10%;
   width: 50%;
-  margin-top: auto;
   padding: 5px;
   border-radius: 5px;
   border-color: #fffcf2;
@@ -162,13 +172,15 @@ const ColorsBox = styled.div`
 
 const Icons = styled.div`
   display: flex;
-  flex-direction: column;
-  border: solid white;
-  margin-left: auto;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
+  padding-bottom: 10px;
+  margin-top: auto;
+  width: 100%;
+  justify-content: space-evenly;
+`;
+
+const TextTitle = styled.div`
+  font-size: 2vw;
+  margin-bottom: 0;
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles
