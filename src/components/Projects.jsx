@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import { projectData } from '../data/ProjectsData.js';
@@ -9,31 +9,37 @@ import { FaReact, FaNodeJs, FaAws } from 'react-icons/fa';
 import { SiExpress, SiJest, SiJavascript, SiPostgresql } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconContext } from "react-icons";
+import $ from 'jquery';
 
 const Projects = () => {
+  const [windowWidth, setWindowWidth] = useState(0)
+  let width = $(window).width()
+
+  useEffect(() => {
+    window.addEventListener('resize', setWindowWidth(width));
+  }, [width])
 
   return (
     <ProjectsContainer>
+      {console.log(Boolean(windowWidth >= 900))}
       <ProjectsTitle>Projects</ProjectsTitle>
       <Grid container spacing={0} position='relative'
-      marginBottom='auto' height={{md: '100%'}}
-      direction='row' overflow='auto'
+      marginBottom='auto' direction='row'
       >
         <Grid container direction='row' height='50%' width='100%%'>
-          <Grid item md={6} position='relative'>
+          <Grid item md={6} position='relative' xs={12} sm={12}>
             <ProjectsPhoto image={projectData[0].img}>
               <ColorsBox>
                 Color Palette
                 {['#3A606E','#607B7D','#828E82','#EF8354'].map((hex) => {
-                  console.log(hex);
-                  return <ColorScheme color={hex}/>
+                    return <ColorScheme key={hex} color={hex}/>
                 })}
               </ColorsBox>
             </ProjectsPhoto>
           </Grid>
-          <Grid container item md={6} direction='row'>
-            <ProjectsText>
-              <Text><TextTitle>{projectData[0].title}</TextTitle><br/>{projectData[0].info}</Text>
+          <Grid item md={6} direction='row' xs={12} sm={12}>
+            <ProjectsText xs={12} sm={12}>
+              <TextTitle>{projectData[0].title}</TextTitle><br/><Text>{projectData[0].info}</Text>
               <Icons>
                 <IconContext.Provider value={{size: 42}}>
                   <SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
@@ -43,45 +49,68 @@ const Projects = () => {
             </ProjectsText>
           </Grid>
         </Grid>
-        <Grid container direction='row' height='50%' width='100%%'>
-          <Grid item md={6}>
-          <ProjectsText>
-            <Text><TextTitle>{projectData[1].title}</TextTitle><br/>{projectData[1].info}</Text>
-            <Icons>
-                <IconContext.Provider value={{size: 42}}>
-                  <SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
-                </IconContext.Provider>
-            </Icons>
-            <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
-          </ProjectsText>
-          </Grid>
-          <Grid item md={6} position='relative'>
-            <ProjectsPhoto image={projectData[1].img}>
-              <ColorsBox>
+        {Boolean(windowWidth >= 900) ?
+          <Grid container direction='row' height='50%' width='100%%'>
+            <Grid item md={6} xs={12} sm={12}>
+            <ProjectsText xs={12} sm={12} md={6}>
+              <TextTitle>{projectData[1].title}</TextTitle><br/><Text>{projectData[1].info}</Text>
+              <Icons>
+                  <IconContext.Provider value={{size: 42}}>
+                    <SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
+                  </IconContext.Provider>
+              </Icons>
+              <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
+            </ProjectsText>
+            </Grid>
+            <Grid item md={6} position='relative' xs={12} sm={12} md={6}>
+              <ProjectsPhoto image={projectData[1].img}>
+                <ColorsBox>
+                    Color Palette
+                    {['#D6CCC2','#EDEDE9','#D5BDAF','#F5EBE0','#807D7D'].map((hex) => {
+                      return <ColorScheme key={hex} color={hex}/>
+                    })}
+                  </ColorsBox>
+              </ProjectsPhoto>
+            </Grid>
+          </Grid> :
+          <Grid container direction='row' height='50%' width='100%%'>
+            <Grid item md={6} position='relative' xs={12} sm={12}>
+              <ProjectsPhoto image={projectData[1].img}>
+                <ColorsBox>
                   Color Palette
                   {['#D6CCC2','#EDEDE9','#D5BDAF','#F5EBE0','#807D7D'].map((hex) => {
-                    console.log(hex);
-                    return <ColorScheme color={hex}/>
+                    return <ColorScheme key={hex} color={hex}/>
                   })}
                 </ColorsBox>
-            </ProjectsPhoto>
-          </Grid>
-        </Grid>
+              </ProjectsPhoto>
+              <Grid item md={6} xs={12} sm={12}>
+                <ProjectsText xs={12} sm={12}>
+                  <TextTitle>{projectData[1].title}</TextTitle><br/><Text>{projectData[1].info}</Text>
+                  <Icons>
+                      <IconContext.Provider value={{size: 42}}>
+                        <SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
+                      </IconContext.Provider>
+                  </Icons>
+                  <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>
+                </ProjectsText>
+              </Grid>
+            </Grid>
+         </Grid>
+      }
         <Grid container direction='row' height='50%' width='100%%'>
-        <Grid item md={6} position='relative'>
+        <Grid item md={6} position='relative' xs={12} sm={12}>
             <ProjectsPhoto image={projectData[2].img}>
               <ColorsBox>
                   Color Palette
                   {['#606C38','#283618','#FEFAE0','#DDA15E', '#BC6C25'].map((hex) => {
-                    console.log(hex);
                     return <ColorScheme color={hex}/>
                   })}
                 </ColorsBox>
             </ProjectsPhoto>
           </Grid>
-          <Grid item md={6}>
-          <ProjectsText>
-            <Text><TextTitle>{projectData[2].title}</TextTitle><br/>{projectData[2].info}</Text>
+          <Grid item md={6} xs={12} sm={12}>
+          <ProjectsText xs={12} sm={12}>
+            <TextTitle>{projectData[2].title}</TextTitle><br/><Text>{projectData[2].info}</Text>
             <Icons>
                 <IconContext.Provider value={{size: 42}}>
                   <SiPostgresql/><SiExpress/><TbBrandReactNative/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/>
@@ -133,8 +162,11 @@ const ProjectsText = styled.div`
 `;
 
 const Text = styled.div`
-  padding: 10px;
+  margin-bottom: auto;
   white-space: break-spaces;
+  font-size: max(1em, 12px);
+  padding-left: 3px;
+  padding-right: 3px;
 `;
 const GithubButton = styled.div`
   border: solid white;
@@ -181,6 +213,8 @@ const Icons = styled.div`
 const TextTitle = styled.div`
   font-size: 2vw;
   margin-bottom: 0;
+  font-size: calc(8px + 1.5vw);
+  font-weight: bold;
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles
