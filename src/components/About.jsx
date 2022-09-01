@@ -3,8 +3,10 @@ import styled, { keyframes } from 'styled-components';
 import { text } from '../data/AboutData.js';
 import Grid from '@mui/material/Grid';
 import AboutMe from './AboutMe.jsx';
-import AboutKenji from './AboutMe.jsx';
-import AboutYuffie from './AboutMe.jsx';
+import AboutKenji from './AboutKenji.jsx';
+import AboutYuffie from './AboutYuffie.jsx';
+import IconKenji from '../media/kenjiIcon.PNG';
+import IconYuffie from '../media/yuffieIcon.PNG';
 
 const About = () => {
   const [view, setView] = useState('Me');
@@ -25,14 +27,12 @@ const About = () => {
   return (
     <AboutContainer>
       <AboutTitle>
-        about me title
-        <PersonIcon onClick={(e) => {setView('Me')}}>me</PersonIcon>
-        <KenjiIcon onClick={(e) => {setView('Kenji')}}>kenji</KenjiIcon>
-        <YuffieIcon onClick={(e) => {setView('Yuffie')}}>yuffie</YuffieIcon>
+        about
+        <PersonIcon onClick={(e) => {setView('Me')}}>👓</PersonIcon>
+        <KenjiIcon onClick={(e) => {setView('Kenji')}} src={IconKenji}></KenjiIcon>
+        <YuffieIcon onClick={(e) => {setView('Yuffie')}} src={IconYuffie}></YuffieIcon>
       </AboutTitle>
-      <main>
-        <Suspense fallback={<p>Loading...</p>}>{renderView()}</Suspense>
-      </main>
+      <Suspense fallback={<p>Loading...</p>}>{renderView()}</Suspense>
     </AboutContainer>
   )
 }
@@ -44,18 +44,18 @@ export default About;
 const AboutContainer = styled.section`
   display: flex;
   height: 100vh;
-  border: solid gray;
   flex-direction: column;
 `;
 
 const AboutTitle = styled.div`
   display: flex;
-  border: solid pink;
   font-size: 6vw;
   font-weight: bold;
-  margin-bottom: 0;
+  margin-bottom: auto;
   color: #fffcf2;
   position: relative;
+  border-top: solid #fffcf2;
+  border-bottom: solid #fffcf2;
 `;
 
 const PersonIcon = styled.span`
@@ -66,15 +66,21 @@ const PersonIcon = styled.span`
   }
 `
 
-const KenjiIcon = styled.span`
+const KenjiIcon = styled.img`
   display: flex;
+  height: 6vw;
+  width: auto;
+  align-self: center;
   :hover {
     cursor: pointer;
   }
 `;
 
-const YuffieIcon = styled.span`
+const YuffieIcon = styled.img`
   display: flex;
+  height: 6vw;
+  width: auto;
+  align-self: center;
   :hover {
     cursor: pointer;
   }

@@ -2,19 +2,18 @@ import React, { useState, useEffect, Suspense } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { text } from '../data/AboutData.js';
 import Grid from '@mui/material/Grid';
-
+import Clayton from '../media/clayton.PNG';
 
 const AboutMe = () => {
   return (
     <AboutContainer>
-      <Grid container spacing={3} position='relative'
-      marginBottom='auto' height={{md: '100%'}}
-      border='solid blue'
+      <Grid container spacing={0} position='relative'
+      marginTop='auto' height={{md: '100%'}}
       >
-        <Grid item md={6} padding='20px'>
+        <Grid item md={6}>
           <AboutText>{text}</AboutText>
         </Grid>
-        <Grid item md={6} position='relative' padding='20px'>
+        <Grid item md={6} position='relative'>
           <AboutPhoto></AboutPhoto>
         </Grid>
     </Grid>
@@ -30,38 +29,12 @@ const AboutContainer = styled.section`
   display: flex;
   height: 100vh;
   justify-content: center;
-  border: solid gray;
   flex-direction: column;
   position: relative;
 `;
 
-const AboutTitle = styled.div`
-  display: flex;
-  border: solid pink;
-  font-size: 6vw;
-  font-weight: bold;
-  margin-bottom: 0;
-  color: #fffcf2;
-`;
-
-const PersonIcon = styled.span`
-  display: flex;
-  margin-left: auto;
-`
-
-const KenjiIcon = styled.span`
-  display: flex;
-  margin-left: auto;
-`;
-
-const YuffieIcon = styled.span`
-  display: flex;
-  margin-left: auto;
-`;
-
 const AboutText = styled.div`
   display: flex;
-  border: solid green;
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -73,8 +46,9 @@ const AboutText = styled.div`
 
 const AboutPhoto = styled.div`
   display: flex;
-  border: solid yellow;
-  background-image: url(https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/01/931/523/Dwayne-Rock-Johnson-GETTY-1.jpg?ve=1&tl=1);
+  background-image: url(${Clayton});
+  background-size: cover;
+  background-position: 50% 25%;
   height: 100%;
 `;
 

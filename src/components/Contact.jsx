@@ -20,8 +20,9 @@ export default Contact;
 const ContactContainer = styled.section`
   display: flex;
   height: 100vh;
+  border: solid gray;
+  flex-direction: column;
   justify-content: center;
-  border: solid red;
 `;
 
 const ContactBox = styled.div`

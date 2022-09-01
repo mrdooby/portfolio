@@ -3,4 +3,23 @@ I have experience developing web and mobile applications and am also actively lo
 I enjoy adding a nerdy twist to applications and spend some of my free time playing fantasy-themed, campaign-based board games.\n
 Feel free to reach out to me if you'd like to chat!`
 
-module.exports = { text }
+const YuffieText = `Name: Yuffie Chin
+Birthday: February 15, 2017
+🐶 1/2 Golden Retriever
+🐶 1/4 Jindo
+🐶 1/4 Akita
+🥰 100% CUTENESS
+
+Loves chasing birds, pulling ropes, and sunbathing !
+`
+
+const KenjiText = `Name: Kenji Chin
+Birthday: July 26, 2014
+🐺 100% Siberian Husky
+🐾 Escape Artist
+👹 Menace
+🥓 Chonky King
+
+Will bark for food and run whenever given the chance !
+`
+module.exports = { text, YuffieText, KenjiText }

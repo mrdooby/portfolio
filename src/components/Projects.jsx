@@ -23,7 +23,7 @@ const Projects = () => {
   return (
     <ProjectsContainer>
       {console.log(Boolean(windowWidth >= 900))}
-      <ProjectsTitle>Projects</ProjectsTitle>
+      <ProjectsTitle>projects</ProjectsTitle>
       <Grid container spacing={0} position='relative'
       marginBottom='auto' direction='row'
       >
@@ -133,6 +133,7 @@ const ProjectsContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  position: relative;
 `;
 
 const ProjectsTitle = styled.div`
@@ -141,6 +142,8 @@ const ProjectsTitle = styled.div`
   font-weight: bold;
   margin-bottom: 0;
   color: #fffcf2;
+  border-top: solid #fffcf2;
+  border-bottom: solid #fffcf2;
 `;
 
 const ProjectsPhoto = styled.div`
