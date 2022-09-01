@@ -4,12 +4,7 @@ import styled from 'styled-components';
 const Contact = () => {
   return (
     <ContactContainer>
-      <ContactBox>
-        <ContactTitle>Contact me</ContactTitle>
-        <ContactBody>reach me at ____</ContactBody>
-        <ContactButton>say hello</ContactButton>
-        <ContactText>email copied to clipboard</ContactText>
-      </ContactBox>
+      <ContactTitle>Contact Me</ContactTitle>
     </ContactContainer>
   )
 }
@@ -20,34 +15,18 @@ export default Contact;
 const ContactContainer = styled.section`
   display: flex;
   height: 100vh;
-  border: solid gray;
   flex-direction: column;
-  justify-content: center;
-`;
-
-const ContactBox = styled.div`
-  width: 70%;
-  border: solid white;
-  align-self: center;
-  text-align: center;
 `;
 
 const ContactTitle = styled.div`
-  font-size: 100px;
-  padding-left: 1%;
+  display: flex;
+  font-size: 6vw;
   font-weight: bold;
+  margin-bottom: auto;
   color: #fffcf2;
-`;
-
-const ContactBody = styled.div`
-  color: #ccc5b9;
-`;
-
-const ContactButton = styled.button`
-`;
-
-const ContactText = styled.div`
-  color: #ccc5b9;
+  position: relative;
+  border-top: solid #fffcf2;
+  border-bottom: solid #fffcf2;
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles

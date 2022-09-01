@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import homeAnimation from '../media/homeAnimation.PNG';
 
 const Home = () => {
   const [click, setClick] = useState(false)
@@ -65,11 +66,12 @@ const HomeText = styled.span`
   font: 700 12vw "Oswald", sans-serif;
   text-shadow: 0 0 80px rgba(255,255,255,.5);
   text-align: center;
-  background: url(https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/01/931/523/Dwayne-Rock-Johnson-GETTY-1.jpg?ve=1&tl=1) repeat;
+  background: url(${homeAnimation}) repeat;
+  background-size: auto 12vw, auto 12vw;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: ${TextAnimation} 10s linear infinite;
+  -webkit-animation: ${TextAnimation} 30s linear infinite;
   -webkit-transform: translate3d(0,0,0);
   -webkit-backface-visibility: hidden;
 `;
