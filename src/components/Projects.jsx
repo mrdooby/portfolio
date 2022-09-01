@@ -38,7 +38,7 @@ const Projects = () => {
               </ColorsBox>
             </ProjectsPhoto>
           </Grid>
-          <Grid item md={6} direction='row' xs={12} sm={12}>
+          <Grid item md={6} xs={12} sm={12}>
             <ProjectsText xs={12} sm={12}>
               <TextTitle>{projectData[0].title}</TextTitle><br/><Text>{projectData[0].info}</Text>
               <Icons>

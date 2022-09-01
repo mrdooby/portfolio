@@ -2,50 +2,37 @@ import React, { useState, useEffect, Suspense } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { text } from '../data/AboutData.js';
 import Grid from '@mui/material/Grid';
-import AboutMe from './AboutMe.jsx';
-import AboutKenji from './AboutMe.jsx';
-import AboutYuffie from './AboutMe.jsx';
 
-const About = () => {
-  const [view, setView] = useState('Me');
 
-  const renderView = () => {
-    switch (view) {
-      case 'Me':
-        return <AboutMe/>;
-      case 'Kenji':
-        return <AboutKenji/>;
-      case 'Yuffie':
-        return <AboutYuffie/>;
-      default:
-        return null;
-    }
-  }
-
+const AboutYuffie = () => {
   return (
     <AboutContainer>
-      <AboutTitle>
-        about me title
-        <PersonIcon onClick={(e) => {setView('Me')}}>me</PersonIcon>
-        <KenjiIcon onClick={(e) => {setView('Kenji')}}>kenji</KenjiIcon>
-        <YuffieIcon onClick={(e) => {setView('Yuffie')}}>yuffie</YuffieIcon>
-      </AboutTitle>
-      <main>
-        <Suspense fallback={<p>Loading...</p>}>{renderView()}</Suspense>
-      </main>
+      <Grid container spacing={3} position='relative'
+      marginBottom='auto' height={{md: '100%'}}
+      border='solid blue'
+      >
+        <Grid item md={6} padding='20px'>
+          <AboutText>Yuffie</AboutText>
+        </Grid>
+        <Grid item md={6} position='relative' padding='20px'>
+          <AboutPhoto></AboutPhoto>
+        </Grid>
+    </Grid>
     </AboutContainer>
   )
 }
 
-export default About;
+export default AboutYuffie;
 
 // styled components
 
 const AboutContainer = styled.section`
   display: flex;
   height: 100vh;
+  justify-content: center;
   border: solid gray;
   flex-direction: column;
+  position: relative;
 `;
 
 const AboutTitle = styled.div`
@@ -55,7 +42,6 @@ const AboutTitle = styled.div`
   font-weight: bold;
   margin-bottom: 0;
   color: #fffcf2;
-  position: relative;
 `;
 
 const PersonIcon = styled.span`
@@ -64,10 +50,11 @@ const PersonIcon = styled.span`
   :hover {
     cursor: pointer;
   }
-`
+`;
 
 const KenjiIcon = styled.span`
   display: flex;
+  margin-left: auto;
   :hover {
     cursor: pointer;
   }
@@ -75,9 +62,29 @@ const KenjiIcon = styled.span`
 
 const YuffieIcon = styled.span`
   display: flex;
+  margin-left: auto;
   :hover {
     cursor: pointer;
   }
+`;
+
+const AboutText = styled.div`
+  display: flex;
+  border: solid green;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 1vw;
+  white-space: break-spaces;
+`;
+
+const AboutPhoto = styled.div`
+  display: flex;
+  border: solid yellow;
+  background-image: url(https://a57.foxnews.com/static.foxbusiness.com/foxbusiness.com/content/uploads/2021/01/931/523/Dwayne-Rock-Johnson-GETTY-1.jpg?ve=1&tl=1);
+  height: 100%;
 `;
 
 // #fffcf2 floral white,
