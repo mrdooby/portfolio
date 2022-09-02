@@ -87,6 +87,7 @@ const Email = styled(EmailIcon)`
     color: #eb5e28;
     transition: all .2s ease-in-out;
     cursor: pointer;
+    transform: translateY(-0.1em);
   }
 `;
 
@@ -95,6 +96,7 @@ const LinkedIn = styled(LinkedInIcon)`
     color: #eb5e28;
     transition: all .2s ease-in-out;
     cursor: pointer;
+    transform: translateY(-0.1em);
   }
 `;
 
@@ -103,6 +105,7 @@ const GitHub = styled(GitHubIcon)`
     color: #eb5e28;
     transition: all .2s ease-in-out;
     cursor: pointer;
+    transform: translateY(-0.1em);
   }
 `;
 

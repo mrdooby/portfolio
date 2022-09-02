@@ -6,7 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Card from '@mui/material/Card';
 import ColorScheme from './ColorScheme.jsx';
 import { FaReact, FaNodeJs, FaAws } from 'react-icons/fa';
-import { SiExpress, SiJest, SiJavascript, SiPostgresql, SiNginx } from 'react-icons/si';
+import { SiExpress, SiJest, SiJavascript, SiPostgresql, SiNginx, SiMongodb } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconContext } from "react-icons";
 import $ from 'jquery';
@@ -57,7 +57,7 @@ const Projects = () => {
               <TextTitle>{projectData[1].title}</TextTitle><br/><Text>{projectData[1].info}</Text>
               <Icons>
                   <IconContext.Provider value={{size: 42}}>
-                    <SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/><SiNginx/>
+                    <SiMongodb/><SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/><SiNginx/>
                   </IconContext.Provider>
               </Icons>
               <GithubButton onClick={(e) => {window.open(`${projectData[0].repo}`)}}><GitStyle/></GithubButton>

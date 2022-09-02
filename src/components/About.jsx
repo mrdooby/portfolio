@@ -63,6 +63,7 @@ const PersonIcon = styled.span`
   margin-left: auto;
   :hover {
     cursor: pointer;
+    transform: translateY(-0.1em);
   }
 `
 
@@ -73,6 +74,7 @@ const KenjiIcon = styled.img`
   align-self: center;
   :hover {
     cursor: pointer;
+    transform: translateY(-0.1em);
   }
 `;
 
@@ -83,6 +85,7 @@ const YuffieIcon = styled.img`
   align-self: center;
   :hover {
     cursor: pointer;
+    transform: translateY(-0.1em);
   }
 `;
 

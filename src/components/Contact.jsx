@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Contact = () => {
   return (
     <ContactContainer>
-      <ContactTitle>Contact Me</ContactTitle>
+      <ContactTitle>contact me</ContactTitle>
     </ContactContainer>
   )
 }

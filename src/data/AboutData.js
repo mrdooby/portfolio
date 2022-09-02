@@ -20,6 +20,6 @@ Birthday: July 26, 2014
 👹 Menace
 🥓 Chonky King
 
-Will bark for food and run whenever given the chance !
+Will bark for food at 5am even though he's on a diet !
 `
 module.exports = { text, YuffieText, KenjiText }
