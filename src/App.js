@@ -1,7 +1,6 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 import About from './components/About.jsx';
-import Contact from './components/Contact.jsx';
 import Home from './components/Home.jsx';
 import Projects from './components/Projects.jsx';
 import ColorScheme from './components/ColorScheme.jsx';
@@ -15,7 +14,6 @@ const App = () => {
       <Home/>
       <Projects/>
       <About/>
-      <Contact/>
       <Footer/>
     </AppContainer>
   )
