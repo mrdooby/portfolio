@@ -14,7 +14,7 @@ const Projects = () => {
           <Grid item md={6} borderRight='solid purple'>
             <ProjectsPhoto image={projectData[0].img}/>
           </Grid>
-          <Grid item md={6} padding='1vw' display='flex' direction='column'>
+          <Grid container item md={6} padding='1vw' display='flex' direction='column'>
             <ProjectsTitle>{projectData[0].title}</ProjectsTitle>
             <ProjectsText>{projectData[0].info}</ProjectsText>
             <ProjectsMembers>{projectData[0].members}</ProjectsMembers>
@@ -29,12 +29,12 @@ const Projects = () => {
             <ProjectsMembers>{projectData[1].members}</ProjectsMembers>
           </Grid>
           <Grid item md={6}>
-            Photo 2
+            <ProjectsPhoto image={projectData[1].img}/>
           </Grid>
         </Grid>
         <Grid container item border='solid yellow' width='90%' height='45vh'>
         <Grid item md={6} borderRight='solid purple'>
-            Photo 3
+          <ProjectsPhoto image={projectData[2].img}/>
           </Grid>
           <Grid item md={6} padding='1vw' display='flex' direction='column'>
             <ProjectsTitle>{projectData[2].title}</ProjectsTitle>
@@ -77,6 +77,16 @@ const ProjectsMembers = styled.div`
   color: #403d39;
 `;
 
+const ProjectsPhoto = styled.div`
+  display: flex;
+  background-image: url(${props => props.image});
+  height: 100%;
+  width: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ccc5b9;
+`;
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,
