@@ -37,14 +37,12 @@ export default Home;
 // styled components
 const HomeContainer = styled.section`
   display: flex;
-  border: solid black;
   height: 100vh;
   flex-direction: column;
 `;
 
 const TitleContainer = styled.div`
   display: flex;
-  border: solid green;
   height: 90vh;
   justify-content: center;
   align-items: center;
@@ -60,7 +58,6 @@ const Title = styled.div`
 
 const IconContainer = styled.div`
   display: flex;
-  border: solid blue;
   justify-content: space-evenly;
   align-items: center;
   padding-bottom: 1vh;
