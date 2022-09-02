@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaReact, FaNodeJs, FaAws } from 'react-icons/fa';
-import { SiExpress, SiJest, SiJavascript, SiPostgresql, SiNginx } from 'react-icons/si';
+import { SiExpress, SiJest, SiJavascript, SiPostgresql, SiNginx, SiMongodb, SiPostman } from 'react-icons/si';
 import { TbBrandReactNative } from 'react-icons/tb';
 import { IconContext } from "react-icons";
+
 
 const Home = () => {
   const [click, setClick] = useState(false)
@@ -24,7 +25,7 @@ const Home = () => {
       </TitleContainer>
       <IconContainer>
         <IconContext.Provider value={{size: '8vh'}}>
-          <SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/><SiNginx/>
+          <SiPostgresql/><SiMongodb/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/><SiNginx/><SiPostman/>
         </IconContext.Provider>
       </IconContainer>
     </HomeContainer>
@@ -48,6 +49,7 @@ const TitleContainer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #252422;
+  margin-bottom: 1vh;
 `;
 
 const Title = styled.div`
@@ -59,9 +61,9 @@ const Title = styled.div`
 const IconContainer = styled.div`
   display: flex;
   border: solid blue;
-  height: 10vh;
   justify-content: space-evenly;
   align-items: center;
+  padding-bottom: 1vh;
 `;
 
 // #fffcf2 floral white,
