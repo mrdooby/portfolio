@@ -6,12 +6,12 @@ import { projectData } from '../data/ProjectsData.js';
 const Projects = () => {
   return (
     <ProjectsContainer>
-      <Grid container border='solid blue' padding='2vw'
+      <Grid container  padding='2vw'
       direction='column'>
-        <Grid container item border='solid green' marginBottom='2vw' width='90%'
+        <Grid container item border='solid #403d39 1px' marginBottom='2vw' width='90%'
          height='45vh'
         >
-          <Grid item md={6} borderRight='solid purple'>
+          <Grid item md={6} borderRight='solid #403d39 1px'>
             <ProjectsPhoto image={projectData[0].img}/>
           </Grid>
           <Grid container item md={6} padding='1vw' display='flex' direction='column'>
@@ -20,10 +20,10 @@ const Projects = () => {
             <ProjectsMembers>{projectData[0].members}</ProjectsMembers>
           </Grid>
         </Grid>
-      <Grid container item border='solid pink' marginBottom='2vw' width='90%'
+      <Grid container item border='solid #403d39 1px' marginBottom='2vw' width='90%'
         marginLeft='auto' height='45vh'
         >
-          <Grid item md={6} borderRight='solid purple' padding='1vw' display='flex' direction='column'>
+          <Grid item md={6} borderRight='solid #403d39 1px' padding='1vw' display='flex' direction='column'>
             <ProjectsTitle>{projectData[1].title}</ProjectsTitle>
             <ProjectsText>{projectData[1].info}</ProjectsText>
             <ProjectsMembers>{projectData[1].members}</ProjectsMembers>
@@ -32,8 +32,8 @@ const Projects = () => {
             <ProjectsPhoto image={projectData[1].img}/>
           </Grid>
         </Grid>
-        <Grid container item border='solid yellow' width='90%' height='45vh'>
-        <Grid item md={6} borderRight='solid purple'>
+        <Grid container item border='solid #403d39 1px' width='90%' height='45vh'>
+        <Grid item md={6} borderRight='solid #403d39 1px'>
           <ProjectsPhoto image={projectData[2].img}/>
           </Grid>
           <Grid item md={6} padding='1vw' display='flex' direction='column'>
@@ -52,7 +52,6 @@ export default Projects;
 // styled components
 const ProjectsContainer = styled.section`
   display: flex;
-  border: solid black;
 `;
 
 const ProjectsTitle = styled.div`
