@@ -15,7 +15,7 @@ const Projects = () => {
             <ProjectsPhoto image={projectData[0].img}/>
           </Grid>
           <Grid container item md={6} padding='1vw' display='flex' direction='column'>
-            <ProjectsTitle>{projectData[0].title}</ProjectsTitle>
+            <ProjectsTitle onClick={(e) => {window.open(`${projectData[0].repo}`)}}>{projectData[0].title} ↗</ProjectsTitle>
             <ProjectsText>{projectData[0].info}</ProjectsText>
             <ProjectsMembers>{projectData[0].members}</ProjectsMembers>
           </Grid>
@@ -24,7 +24,7 @@ const Projects = () => {
         marginLeft='auto' height='45vh'
         >
           <Grid item md={6} borderRight='solid #403d39 1px' padding='1vw' display='flex' direction='column'>
-            <ProjectsTitle>{projectData[1].title}</ProjectsTitle>
+            <ProjectsTitle onClick={(e) => {window.open(`${projectData[1].repo}`)}}>{projectData[1].title} ↗</ProjectsTitle>
             <ProjectsText>{projectData[1].info}</ProjectsText>
             <ProjectsMembers>{projectData[1].members}</ProjectsMembers>
           </Grid>
@@ -37,7 +37,7 @@ const Projects = () => {
           <ProjectsPhoto image={projectData[2].img}/>
           </Grid>
           <Grid item md={6} padding='1vw' display='flex' direction='column'>
-            <ProjectsTitle>{projectData[2].title}</ProjectsTitle>
+            <ProjectsTitle onClick={(e) => {window.open(`${projectData[2].repo}`)}}>{projectData[2].title} ↗</ProjectsTitle>
             <ProjectsText>{projectData[2].info}</ProjectsText>
             <ProjectsMembers>{projectData[2].members}</ProjectsMembers>
           </Grid>
@@ -59,6 +59,13 @@ const ProjectsTitle = styled.div`
   justify-content: center;
   font-size: max(20px, 2vw);
   font-weight: bold;
+  :hover {
+    color: #eb5e28;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+    transform: translateY(-0.1em);
+    text-decoration: underline 3px #eb5e28;
+  }
 `
 
 const ProjectsText = styled.div`
