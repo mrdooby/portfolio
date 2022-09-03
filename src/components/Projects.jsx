@@ -10,7 +10,7 @@ const Projects = () => {
       <Grid container padding='2vw'
       direction='column'>
         <Grid container item marginBottom='2vw' width='90%'
-         height='45vh' boxShadow='0 0 5px #c7c1ad' borderRadius='5px'
+         height='45vh' boxShadow='0 0 5px #858071' borderRadius='5px'
         >
           <Grid item md={6} borderRadius='5px'>
             <ProjectsPhoto image={projectData[0].img}/>
@@ -22,7 +22,7 @@ const Projects = () => {
           </Grid>
         </Grid>
       <Grid container item marginBottom='2vw' width='90%'
-        marginLeft='auto' height='45vh' boxShadow='0 0 5px #c7c1ad' borderRadius='5px'
+        marginLeft='auto' height='45vh' boxShadow='0 0 5px #858071' borderRadius='5px'
         >
           <Grid item container md={6} padding='1vw'
           display='flex' direction='column' backgroundColor='white' borderRadius='5px'>
@@ -34,7 +34,7 @@ const Projects = () => {
             <ProjectsPhoto image={projectData[1].img}/>
           </Grid>
         </Grid>
-        <Grid container item width='90%' height='45vh' borderRadius='5px' boxShadow='0 0 5px #c7c1ad' borderRadius='5px'>
+        <Grid container item width='90%' height='45vh' borderRadius='5px' boxShadow='0 0 5px #858071' borderRadius='5px'>
         <Grid item md={6} borderRadius='5px'>
           <ProjectsPhoto image={projectData[2].img}/>
           </Grid>

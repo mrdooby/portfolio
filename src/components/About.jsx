@@ -105,9 +105,6 @@ const ClayTab = styled.div`
   }
   &:after {
     content: '';
-    border-style: solid solid none solid;
-    border-color: #403d39;
-    border-width: 1px;
     height: calc(25px + 0.15em);
     width: 50px;
     position: absolute;
@@ -115,7 +112,7 @@ const ClayTab = styled.div`
     border-radius: 5px 5px 0 0;
     background-color: #ccc5b9;
     z-index: -1;
-    box-shadow: 0 0 5px #c7c1ad;
+    box-shadow: 0 0 5px #858071;
   }
 `;
 
@@ -137,9 +134,7 @@ const KenjiTab = styled.div`
   }
   &:after {
     content: '';
-    border-style: solid solid none solid;
-    border-color: #403d39;
-    border-width: 1px;
+    box-shadow: 0 0 5px #858071;
     height: calc(25px + 0.15em);
     width: 50px;
     position: absolute;
@@ -168,9 +163,7 @@ transform: translateY(${props => props.t});
 }
 &:after {
   content: '';
-  border-style: solid solid none solid;
-  border-color: #403d39;
-  border-width: 1px;
+  box-shadow: 0 0 5px #858071;
   height: calc(25px + 0.15em);
   width: 50px;
   position: absolute;
@@ -181,67 +174,6 @@ transform: translateY(${props => props.t});
 }
 `;
 
-const TabBorder = styled.div`
-  display: flex;
-  width: calc(100% - 4vw);
-  position: relative;
-  top: -25px;
-  z-index: -2;
-  border: solid black;
-`;
-
-const ClayBorder = styled.div`
-  display: flex;
-  height: 50px;
-  width: 50px;
-  border: solid #403d39 1px;
-  border-radius: 10px 10px 0 0;
-  margin-left: auto;
-  margin-right: 15px;
-  font-size: 40px;
-  justify-content: center;
-  align-items: center;
-  background-color: #ccc5b9;
-  top: -25px;
-  z-index: ${props => props.z};
-  :hover {
-    cursor: pointer;
-  }
-`;
-
-const KenjiBorder = styled.div`
-  display: flex;
-  height: 50px;
-  width: 50px;
-  border: solid #403d39 1px;
-  border-radius: 10px 10px 0 0;
-  margin-right: 15px;
-  font-size: 40px;
-  justify-content: center;
-  align-items: center;
-  background-color: #ccc5b9;
-  z-index: ${props => props.z};
-  :hover {
-    cursor: pointer;
-  }
-`;
-
-const YuffieBorder = styled.div`
-  display: flex;
-  height: 50px;
-  width: 50px;
-  border: solid #403d39 1px;
-  border-radius: 10px 10px 0 0;
-  margin-right: 15px;
-  font-size: 40px;
-  justify-content: center;
-  align-items: center;
-  background-color: #ccc5b9;
-  z-index: ${props => props.z};
-  :hover {
-    cursor: pointer;
-  }
-`;
 // #fffcf2 floral white,
 //    pop out, headers and titles
 // #ccc5b9 pale silver,

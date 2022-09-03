@@ -7,7 +7,7 @@ import YuffieImg from '../media/yuffie.PNG';
 const AboutYuffie = () => {
   return (
     <AboutMeContainer>
-      <Grid container border='solid #403d39 1px' height='60vh' width={`calc(100% - 4vw)`} backgroundColor= '#ccc5b9'>
+      <Grid container  boxShadow='0 0 5px #858071' borderRadius='5px' height='60vh' width={`calc(100% - 4vw)`} backgroundColor= '#ccc5b9'>
         <Grid item md={4}>
           <Text>Yuffie Chin</Text>
         </Grid>
