@@ -25,7 +25,7 @@ const Home = () => {
       </TitleContainer>
       <IconContainer>
         <IconContext.Provider value={{size: '8vh'}}>
-          <SiPostgresql/><SiMongodb/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/><SiNginx/><SiPostman/>
+          <SiPostgresql/><SiExpress/><FaReact/><FaNodeJs/><FaAws/><SiJest/><SiJavascript/><SiMongodb/><SiNginx/><SiPostman/>
         </IconContext.Provider>
       </IconContainer>
     </HomeContainer>

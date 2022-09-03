@@ -2,41 +2,43 @@ import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import { projectData } from '../data/ProjectsData.js';
+import { Paper } from '@mui/material';
 
 const Projects = () => {
   return (
     <ProjectsContainer>
       <Grid container padding='2vw'
       direction='column'>
-        <Grid container item border='solid #403d39 1px' marginBottom='2vw' width='90%'
-         height='45vh'
+        <Grid container item marginBottom='2vw' width='90%'
+         height='45vh' boxShadow='0 0 5px #c7c1ad' borderRadius='5px'
         >
-          <Grid item md={6} borderRight='solid #403d39 1px'>
+          <Grid item md={6} borderRadius='5px'>
             <ProjectsPhoto image={projectData[0].img}/>
           </Grid>
-          <Grid container item md={6} padding='1vw' display='flex' direction='column' backgroundColor='#fffcf2'>
+          <Grid container item md={6} padding='1vw' display='flex' direction='column' backgroundColor='white' borderRadius='5px'>
             <ProjectsTitle onClick={(e) => {window.open(`${projectData[0].repo}`)}}>{projectData[0].title} ↗</ProjectsTitle>
             <ProjectsText>{projectData[0].info}</ProjectsText>
             <ProjectsMembers>{projectData[0].members}</ProjectsMembers>
           </Grid>
         </Grid>
-      <Grid container item border='solid #403d39 1px' marginBottom='2vw' width='90%'
-        marginLeft='auto' height='45vh'
+      <Grid container item marginBottom='2vw' width='90%'
+        marginLeft='auto' height='45vh' boxShadow='0 0 5px #c7c1ad' borderRadius='5px'
         >
-          <Grid item container md={6} borderRight='solid #403d39 1px' padding='1vw' display='flex' direction='column' backgroundColor='#fffcf2'>
+          <Grid item container md={6} padding='1vw'
+          display='flex' direction='column' backgroundColor='white' borderRadius='5px'>
             <ProjectsTitle onClick={(e) => {window.open(`${projectData[1].repo}`)}}>{projectData[1].title} ↗</ProjectsTitle>
             <ProjectsText>{projectData[1].info}</ProjectsText>
             <ProjectsMembers>{projectData[1].members}</ProjectsMembers>
           </Grid>
-          <Grid item md={6}>
+          <Grid item md={6} borderRadius='5px'>
             <ProjectsPhoto image={projectData[1].img}/>
           </Grid>
         </Grid>
-        <Grid container item border='solid #403d39 1px' width='90%' height='45vh'>
-        <Grid item md={6} borderRight='solid #403d39 1px'>
+        <Grid container item width='90%' height='45vh' borderRadius='5px' boxShadow='0 0 5px #c7c1ad' borderRadius='5px'>
+        <Grid item md={6} borderRadius='5px'>
           <ProjectsPhoto image={projectData[2].img}/>
           </Grid>
-          <Grid item container md={6} padding='1vw' display='flex' direction='column' backgroundColor='#fffcf2'>
+          <Grid item container md={6} padding='1vw' display='flex' direction='column' backgroundColor='white' borderRadius='5px'>
             <ProjectsTitle onClick={(e) => {window.open(`${projectData[2].repo}`)}}>{projectData[2].title} ↗</ProjectsTitle>
             <ProjectsText>{projectData[2].info}</ProjectsText>
             <ProjectsMembers>{projectData[2].members}</ProjectsMembers>
@@ -92,6 +94,7 @@ const ProjectsPhoto = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-color: #ccc5b9;
+  border-radius: 5px;
 `;
 // #fffcf2 floral white,
 //    pop out, headers and titles
