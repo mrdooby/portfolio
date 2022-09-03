@@ -2,7 +2,6 @@ import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 import Grid from '@mui/material/Grid';
 import { projectData } from '../data/ProjectsData.js';
-import { Paper } from '@mui/material';
 
 const Projects = () => {
   return (

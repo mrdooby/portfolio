@@ -22,12 +22,14 @@ const HeaderContainer = styled.section`
   position: fixed;
   width: 100%;
   justify-content: flex-end;
-  background-color: rgba(64,61,57,0.5);
+  background-color: #fffcf2;
   z-index: 10;
+  box-shadow: 0 0 3px black;
 `;
 
 const HeaderTab = styled.div`
   margin-right: 20px;
+  color: #252422;
   :hover {
     color: #eb5e28;
     cursor: pointer
@@ -35,6 +37,7 @@ const HeaderTab = styled.div`
 `;
 
 const NameTab = styled.div`
+  color: #252422;
   margin-right: auto;
   margin-left: 20px;
 `
