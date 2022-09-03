@@ -29,7 +29,7 @@ const About = () => {
 
 
   return (
-    <AboutContainer>
+    <AboutContainer id='about'>
       <TabBox>
         <ClayTab z={zClay} t={tClay}
         onClick={(e) => {

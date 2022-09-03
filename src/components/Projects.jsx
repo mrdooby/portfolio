@@ -5,7 +5,7 @@ import { projectData } from '../data/ProjectsData.js';
 
 const Projects = () => {
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id='projects'>
       <Grid container padding='2vw'
       direction='column'>
         <Grid container item marginBottom='2vw' width='90%'

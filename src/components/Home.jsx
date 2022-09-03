@@ -28,7 +28,7 @@ const Home = () => {
   // })
 
   return (
-    <HomeContainer>
+    <HomeContainer id='home'>
       <TitleContainer>
         <Title>Clayton Chin</Title>
           {/* <Kenji x={left} y={top}/>

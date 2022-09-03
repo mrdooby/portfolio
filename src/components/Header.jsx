@@ -2,13 +2,16 @@ import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
 
 const Header = () => {
+  const projects = document.getElementById('projects');
+  const about = document.getElementById('about');
+  const home = document.getElementById('home');
+
   return (
     <HeaderContainer>
       <NameTab>clayton chin</NameTab>
-      <HeaderTab>home</HeaderTab>
-      <HeaderTab>about</HeaderTab>
-      <HeaderTab>projects</HeaderTab>
-      <HeaderTab>contact</HeaderTab>
+      <HeaderTab onClick={(e) => {home.scrollIntoView({alignToTop: true, behavior: 'smooth'})}}>home</HeaderTab>
+      <HeaderTab onClick={(e) => {about.scrollIntoView({alignToTop: true, behavior: 'smooth'})}}>about</HeaderTab>
+      <HeaderTab onClick={(e) => {projects.scrollIntoView({alignToTop: true, behavior: 'smooth'})}}>projects</HeaderTab>
       <HeaderTab>resume</HeaderTab>
     </HeaderContainer>
   )
