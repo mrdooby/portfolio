@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { projectData } from '../data/ProjectsData.js';
 
 const Projects = () => {
+
   return (
     <ProjectsContainer id='projects'>
       <Grid container padding='2vw'

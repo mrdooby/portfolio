@@ -10,11 +10,11 @@ import Footer from './components/Footer.jsx';
 const App = () => {
   return (
     <AppContainer>
-      <Header/>
       <Home/>
       <Projects/>
       <About/>
       <Footer/>
+      <Header/>
     </AppContainer>
   )
 };

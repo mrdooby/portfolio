@@ -1,18 +1,48 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styled from 'styled-components';
+import Resume from '../media/ClaytonGChin_Resume.pdf';
 
 const Header = () => {
-  const projects = document.getElementById('projects');
   const about = document.getElementById('about');
   const home = document.getElementById('home');
+
+  const aboutScroll = async () => {
+    try {
+      let about = document.getElementById('about');
+      about.scrollIntoView({alignToTop: true, behavior: 'smooth'});
+
+    } catch (err) {
+      console.log('err in projects scroll');
+    }
+  }
+
+  const homeScroll = async () => {
+    try {
+      let home = document.getElementById('home');
+      home.scrollIntoView({alignToTop: true, behavior: 'smooth'});
+
+    } catch (err) {
+      console.log('err in projects scroll');
+    }
+  }
+
+  const projectsScroll = async () => {
+    try {
+      let projects = document.getElementById('projects');
+      projects.scrollIntoView({alignToTop: true, behavior: 'smooth'});
+
+    } catch (err) {
+      console.log('err in projects scroll');
+    }
+  }
 
   return (
     <HeaderContainer>
       <NameTab>clayton chin</NameTab>
-      <HeaderTab onClick={(e) => {home.scrollIntoView({alignToTop: true, behavior: 'smooth'})}}>home</HeaderTab>
-      <HeaderTab onClick={(e) => {about.scrollIntoView({alignToTop: true, behavior: 'smooth'})}}>about</HeaderTab>
-      <HeaderTab onClick={(e) => {projects.scrollIntoView({alignToTop: true, behavior: 'smooth'})}}>projects</HeaderTab>
-      <HeaderTab>resume</HeaderTab>
+      <HeaderTab onClick={homeScroll}>home</HeaderTab>
+      <HeaderTab onClick={aboutScroll}>about</HeaderTab>
+      <HeaderTab onClick={projectsScroll}>projects</HeaderTab>
+      <HeaderTab onClick={(e) => {window.open(Resume)}}>resume</HeaderTab>
     </HeaderContainer>
   )
 }
