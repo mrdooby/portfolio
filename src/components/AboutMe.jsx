@@ -57,6 +57,7 @@ const AboutMeContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
+  z-index: 3;
 `;
 
 const Text = styled.div`
