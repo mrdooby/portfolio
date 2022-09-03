@@ -11,7 +11,9 @@ const About = () => {
   const [zClay, setZClay] = useState(4);
   const [zKenji, setZKenji] = useState(1);
   const [zYuffie, setZYuffie] = useState(1);
-
+  const [tClay, setTClay] = useState('-0.15em');
+  const [tKenji, setTKenji] = useState(0);
+  const [tYuffie, setTYuffie] = useState(0);
   const renderView = () => {
     switch (view) {
       case 'Me':
@@ -29,27 +31,36 @@ const About = () => {
   return (
     <AboutContainer>
       <TabBox>
-        <ClayTab z={zClay}
+        <ClayTab z={zClay} t={tClay}
         onClick={(e) => {
           setView('Me');
           setZClay(4);
           setZKenji(1);
           setZYuffie(1);
+          setTClay('-0.15em');
+          setTKenji(0);
+          setTYuffie(0);
         }}
-        >👓</ClayTab>
-        <KenjiTab z={zKenji}
+        >👦🏻</ClayTab>
+        <KenjiTab z={zKenji} t={tKenji}
         onClick={(e) => {
           setView('Kenji');
           setZClay(1);
           setZKenji(4);
           setZYuffie(1);
+          setTClay(0);
+          setTKenji('-0.15em');
+          setTYuffie(0);
           }}>🐺</KenjiTab>
-        <YuffieTab z={zYuffie}
+        <YuffieTab z={zYuffie} t={tYuffie}
         onClick={(e) => {
           setView('Yuffie');
           setZClay(1);
           setZKenji(1);
           setZYuffie(4);
+          setTClay(0);
+          setTKenji(0);
+          setTYuffie('-0.15em');
           }}>🐶</YuffieTab>
       </TabBox>
       <Suspense fallback={<p>Loading...</p>}>{renderView()}</Suspense>
@@ -87,21 +98,24 @@ const ClayTab = styled.div`
   background-color: #ccc5b9;
   top: -25px;
   z-index: ${props => props.z};
+  transform: translateY(${props => props.t});
   :hover {
     cursor: pointer;
+    transform: translateY(-0.15em);
   }
   &:after {
     content: '';
     border-style: solid solid none solid;
     border-color: #403d39;
     border-width: 1px;
-    height: 25px;
+    height: calc(25px + 0.15em);
     width: 50px;
     position: absolute;
     top: 0;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
     background-color: #ccc5b9;
     z-index: -1;
+    box-shadow: 0 0 5px #c7c1ad;
   }
 `;
 
@@ -116,15 +130,17 @@ const KenjiTab = styled.div`
   align-items: center;
   background-color: #ccc5b9;
   z-index: ${props => props.z};
+  transform: translateY(${props => props.t});
   :hover {
     cursor: pointer;
+    transform: translateY(-0.15em);
   }
   &:after {
     content: '';
     border-style: solid solid none solid;
     border-color: #403d39;
     border-width: 1px;
-    height: 25px;
+    height: calc(25px + 0.15em);
     width: 50px;
     position: absolute;
     top: 0;
@@ -135,32 +151,34 @@ const KenjiTab = styled.div`
 `;
 
 const YuffieTab = styled.div`
-  display: flex;
-  height: 50px;
+display: flex;
+height: 50px;
+width: 50px;
+border-radius: 10px 10px 0 0;
+margin-right: 15px;
+font-size: 40px;
+justify-content: center;
+align-items: center;
+background-color: #ccc5b9;
+z-index: ${props => props.z};
+transform: translateY(${props => props.t});
+:hover {
+  cursor: pointer;
+  transform: translateY(-0.15em);
+}
+&:after {
+  content: '';
+  border-style: solid solid none solid;
+  border-color: #403d39;
+  border-width: 1px;
+  height: calc(25px + 0.15em);
   width: 50px;
+  position: absolute;
+  top: 0;
   border-radius: 10px 10px 0 0;
-  margin-right: 15px;
-  font-size: 40px;
-  justify-content: center;
-  align-items: center;
   background-color: #ccc5b9;
-  z-index: ${props => props.z};
-  :hover {
-    cursor: pointer;
-  }
-  &:after {
-    content: '';
-    border-style: solid solid none solid;
-    border-color: #403d39;
-    border-width: 1px;
-    height: 25px;
-    width: 50px;
-    position: absolute;
-    top: 0;
-    border-radius: 10px 10px 0 0;
-    background-color: #ccc5b9;
-    z-index: -1;
-  }
+  z-index: -1;
+}
 `;
 
 const TabBorder = styled.div`
