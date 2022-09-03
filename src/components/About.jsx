@@ -112,7 +112,7 @@ const ClayTab = styled.div`
     border-radius: 5px 5px 0 0;
     background-color: #ccc5b9;
     z-index: -1;
-    box-shadow: 0 0 5px #858071;
+    box-shadow: 0 -5px 5px -5px #858071, 5px 0 5px -5px #858071, -5px 0 5px -5px #858071;
   }
 `;
 
@@ -134,12 +134,12 @@ const KenjiTab = styled.div`
   }
   &:after {
     content: '';
-    box-shadow: 0 0 5px #858071;
+    box-shadow: 0 -5px 5px -5px #858071, 5px 0 5px -5px #858071, -5px 0 5px -5px #858071;
     height: calc(25px + 0.15em);
     width: 50px;
     position: absolute;
     top: 0;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
     background-color: #ccc5b9;
     z-index: -1;
   }
@@ -163,12 +163,12 @@ transform: translateY(${props => props.t});
 }
 &:after {
   content: '';
-  box-shadow: 0 0 5px #858071;
+  box-shadow: 0 -5px 5px -5px #858071, 5px 0 5px -5px #858071, -5px 0 5px -5px #858071;
   height: calc(25px + 0.15em);
   width: 50px;
   position: absolute;
   top: 0;
-  border-radius: 10px 10px 0 0;
+  border-radius: 5px 5px 0 0;
   background-color: #ccc5b9;
   z-index: -1;
 }
